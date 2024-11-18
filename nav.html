@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>导航页</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .tabs {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin: 20px 0;
+        }
+        .tab-button {
+            padding: 10px 20px;
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .tab-button.active {
+            background: #333;
+            color: #fff;
+        }
+        .container {
+            max-width: 1200px;
+            width: 90%;
+            margin: 20px auto;
+        }
+        .category {
+            display: none;
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .category.active {
+            display: block;
+        }
+        .category h2 {
+            margin: 20 0 20px; /* 增加二级分类间距 */
+            font-size: 20px;
+            border-bottom: 2px solid #333;
+            padding-bottom: 5px;
+        }
+        .links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .link {
+            background: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            width: 116px; /* 固定宽度 */
+            height: 35px; /* 固定高度 */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            color: #333;
+            font-size: 14px;
+            text-align: center;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .link:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <!-- 一级分类按钮 -->
+    <div class="tabs">
+        <button class="tab-button active" data-tab="tab-1">收藏夹</button>
+        <button class="tab-button" data-tab="tab-2">工具</button>
+        <button class="tab-button" data-tab="tab-3">整理</button>
+        <button class="tab-button" data-tab="tab-4">❤</button>
+    </div>
+
+    <!-- 分类内容 -->
+    <div class="container">
+        <div id="tab-1" class="category active">
+            <h2>搜索</h2>
+            <div class="links">
+                <a class="link" href="https://www.bing.com/" target="_blank">必应</a>
+                <a class="link" href="https://www.baidu.com/" target="_blank">百度</a>
+                <a class="link" href="https://www.google.com/" target="_blank">谷歌</a>
+                <a class="link" href="https://tieba.baidu.com/" target="_blank">贴吧</a>
+                <a class="link" href="https://www.xiaohongshu.com" target="_blank">小红书</a>
+                <a class="link" href="https://weixin.sogou.com/" target="_blank">微信文章搜索</a>
+                <a class="link" href="https://www.zhihu.com/" target="_blank">知乎</a>
+                <a class="link" href="https://github.com/" target="_blank">GitHub</a>
+                <a class="link" href="https://www.v2ex.com/" target="_blank">V2EX</a>
+                <a class="link" href="https://www.wikipedia.org/" target="_blank">Wikipedia CN</a>
+                <a class="link" href="https://ja.wikipedia.org/" target="_blank">Wikipedia JA</a>
+            </div>
+            <h2>常用</h2>
+            <div class="links">
+                <a class="link" href="https://workflowy.com/" target="_blank">Workflowy</a>
+                <a class="link" href="https://habtica.com/" target="_blank">Habitica</a>
+                <a class="link" href="https://simplenote.com" target="_blank">Simplenote</a>
+                <a class="link" href="https://justnote.cc/" target="_blank">Justnote</a>
+            </div>
+            <h2>娱乐</h2>
+            <div class="links">
+                <a class="link" href="https://bangumi.tv/" target="_blank">Bangumi</a>
+
+                <a class="link" href="https://neodb.social/" target="_blank">NeoDB</a>
+                <a class="link" href="https://www.bilibili.com/watchlater/#/list" target="_blank">bili 稍后再看</a>
+                <a class="link" href="https://twitter.com" target="_blank">X</a>
+                <a class="link" href="https://pixiv.com" target="_blank">Pixiv</a>
+                <a class="link" href="https://web.telegram.org/a/" target="_blank">Telegram</a>
+                <a class="link" href="https://weibo.com" target="_blank">微博</a>
+            </div>
+            <h2>邮箱</h2>
+            <div class="links">
+                <a class="link" href="https://outlook.live.com" target="_blank">Outlook</a>
+                <a class="link" href="https://mail.google.com/mail" target="_blank">Gmail</a>
+                <a class="link" href="https://mail.163.com/" target="_blank">163邮箱</a>
+            </div>
+            <h2>云盘</h2>
+            <div class="links">
+                <a class="link" href="https://onedrive.live.com/" target="_blank">Onedrive</a>
+                <a class="link" href="https://mega.nz/" target="_blank">MEGA</a>
+                <a class="link" href="https://www.jianguoyun.com/" target="_blank">坚果云</a>
+                <a class="link" href="http://pan.baidu.com/disk/home" target="_blank">百度网盘</a>
+                <a class="link" href="https://www.aliyundrive.com/drive" target="_blank">阿里云盘</a>
+                <a class="link" href="https://www.office.com/?auth=1" target="_blank">Office365</a>
+            </div>
+            <h2>其它</h2>
+            <div class="links">
+                <a class="link" href="https://571046.xyz/" target="_blank">My Links</a>
+                <a class="link" href="https://www.gushiwen.cn/" target="_blank">古诗文网</a>
+                <a class="link" href="http://www.luxunmuseum.com.cn/cx/works.php" target="_blank">鲁迅博物馆</a>
+                <a class="link" href="https://mastodon.social/home" target="_blank">Mastodon</a>
+                <a class="link" href="https://discord.com/" target="_blank">Discord</a>
+            </div>
+        </div>
+
+        <div id="tab-2" class="category">
+            <h2>综合</h2>
+            <div class="links">
+                <a class="link" href="https://tools.miku.ac/" target="_blank">MikuTools ★</a>
+                <a class="link" href="https://www.67tool.com/" target="_blank">即时工具</a>
+            </div>
+            <h2>文件</h2>
+            <div class="links">
+                <a class="link" href="https://www.ilovepdf.com/" target="_blank">iLovePDF ★</a>
+                <a class="link" href="https://convertio.co/zh/" target="_blank">Convertio</a>
+                <a class="link" href="https://docsmall.com/" target="_blank">docsmall</a>
+                <a class="link" href="https://www.wulingate.com/" target="_blank">WulinGate ★</a>
+                <a class="link" href="https://www.wenshushu.cn/" target="_blank">文叔叔</a>
+                <a class="link" href="https://szfilehelper.weixin.qq.com/" target="_blank">微信文件传输</a>
+            </div>
+            <h2>文本</h2>
+            <div class="links">
+                <a class="link" href="https://txt.xrl.app/" target="_blank">易笺</a>
+                <a class="link" href="https://web.baimiaoapp.com/" target="_blank">白描网页版</a>
+                <a class="link" href="https://unicode-table.com/cn/" target="_blank">Unicode 符号表</a>
+                <a class="link" href="https://emoji.muan.co/#" target="_blank">Emoji searcher</a>
+                <a class="link" href="https://paste.underworld.fr/" target="_blank">Underworld PrivateBin</a>
+                <a class="link" href="https://telegra.ph/" target="_blank">Telegraph</a>
+                <a class="link" href="https://euangoddard.github.io/clipboard2markdown/" target="_blank">Paste to Markdown</a>
+                <a class="link" href="https://tableconvert.com/" target="_blank">Table Convert Online</a>
+                <a class="link" href="https://kimmknight.github.io/MarkdownMate/" target="_blank">MarkdownMate</a>
+                <a class="link" href="https://diffsuite.com/" target="_blank">Text Compare</a>
+                <a class="link" href="https://regex101.com/" target="_blank">regex101</a>
+                <a class="link" href="https://regex.ai/" target="_blank">Regex.ai</a>
+                <a class="link" href="https://lingojam.com/FancyTextGenerator" target="_blank">Fancy Text Generator</a>
+                <a class="link" href="https://wordcount.com/zh/text-summarizer" target="_blank">文本摘要器</a>
+            </div>
+            <h2>书籍</h2>
+            <div class="links">
+                <a class="link" href="https://www.amazon.com/sendtokindle" target="_blank">Send to Kindle</a>
+                <a class="link" href="https://www.amazon.com/hz/mycd/myx#/home/content/collection/modDateDsc/" target="_blank">Amazon 收藏</a>
+                <a class="link" href="https://ebook.cdict.info/epub/" target="_blank">天火藏書</a>
+                <a class="link" href="https://wing-kai.github.io/epub-manga-creator/" target="_blank">Epub Manga Creator</a>
+            </div>
+            <h2>学习</h2>
+            <div class="links">
+                <a class="link" href="https://naotu.baidu.com/" target="_blank">百度脑图</a>
+                <a class="link" href="https://www.tldraw.com/" target="_blank">tldraw</a>
+                <a class="link" href="https://wanglin2.github.io/mind-map/#/" target="_blank">思绪思维导图</a>
+                <a class="link" href="https://ankiweb.net/decks" target="_blank">Ankiweb</a>
+                <a class="link" href="https://excalidraw.com/" target="_blank">excalidraw</a>
+            </div>
+            <h2>视频音频</h2>
+            <div class="links">
+                <a class="link" href="https://www.feishu.cn/product/minutes" target="_blank">飞书妙记</a>
+                <a class="link" href="https://huggingface.co/spaces/sanchit-gandhi/whisper-jax" target="_blank">Whisper JAX</a>
+                <a class="link" href="https://azure.microsoft.com/zh-cn/services/cognitive-services/text-to-speech/?cdn=disable#features" target="_blank">文本转语音 Microsoft Azure</a>
+            </div>
+            <h2>翻译/词典</h2>
+            <div class="links">
+                <a class="link" href="https://fanyi.baidu.com/mtpe-individual/multimodal#/" target="_blank">百度翻译</a>
+                <a class="link" href="https://www.weblio.jp/" target="_blank">Weblio辞書</a>
+                <a class="link" href="https://kobun.weblio.jp/" target="_blank">Weblio古语辞典</a>
+                <a class="link" href="https://www.linguee.com/" target="_blank">Linguee</a>
+                <a class="link" href="https://www.deepl.com/" target="_blank">DeepL</a>
+                <a class="link" href="https://translate.google.com.hk/?hl=zh-CN&tab=wT" target="_blank">Google 翻译</a>
+                <a class="link" href="https://www.shenyandayi.com/" target="_blank">深言达意</a>
+            </div>
+            <h2>AI</h2>
+            <div class="links">
+                <a class="link" href="https://chatgpt.com/" target="_blank">ChatGPT</a>
+                <a class="link" href="https://gemini.google.com/app" target="_blank">‎Gemini</a>
+                <a class="link" href="https://cn.bing.com/images/create/" target="_blank">必应图像创建器</a>
+                <a class="link" href="https://aistudio.google.com/app/prompts/new_chat" target="_blank">aistudio</a>
+                <a class="link" href="https://chatglm.cn/?lang=zh" target="_blank">智谱清言</a>
+                <a class="link" href="https://www.doubao.com/chat/" target="_blank">豆包</a>
+                <a class="link" href="https://kimi.moonshot.cn/" target="_blank">Kimi</a>
+                <a class="link" href="https://tongyi.aliyun.com/qianwen" target="_blank">通义千问</a>
+                <a class="link" href="https://poe.com/GPT-4-Turbo" target="_blank">Poe</a>
+            </div>
+            <h2>AI工具</h2>
+            <div class="links">
+                <a class="link" href="https://aitodo.co/" target="_blank">bili视频摘要</a>
+                <a class="link" href="https://magickpen.com/" target="_blank">magickpen</a>
+                <a class="link" href="https://www.chatpdf.com/" target="_blank">ChatPDF</a>
+                <a class="link" href="https://chatdoc.com/" target="_blank">ChatDOC</a>
+            </div>
+            <h2>图片 - 综合/编辑</h2>
+            <div class="links">
+                <a class="link" href="https://imagestool.com/zh_CN/" target="_blank">在线处理图片 ★</a>
+                <a class="link" href="https://www.photopea.com/" target="_blank">Photopea</a>
+                <a class="link" href="https://ps.gaoding.com/#/?hmsr=zc-cc" target="_blank">在线PS</a>
+                <a class="link" href="https://www.iloveimg.com/zh-cn" target="_blank">iLoveIMG</a>
+                <a class="link" href="https://docsmall.com/" target="_blank">docsmall</a>
+            </div>
+            <h2>图片 - 抠图</h2>
+            <div class="links">
+                <a class="link" href="https://pixian.ai/" target="_blank">Pixian.AI ★</a>
+                <a class="link" href="https://www.remove.bg/zh/" target="_blank">remove.bg ★</a>
+                <a class="link" href="https://www.bgeraser.com/" target="_blank">Bg Eraser</a>
+                <a class="link" href="https://photokit.com/" target="_blank">Photo Editor</a>
+                <a class="link" href="https://miankoutupian.com/ai/cutout" target="_blank">免抠图片网</a>
+                <a class="link" href="https://picwish.cn/remove-background" target="_blank">佐糖AI抠图</a>
+                <a class="link" href="https://segment-anything.com/demo#" target="_blank">Segment Anything</a>
+            </div>
+            <h2>图片 - 其它</h2>
+            <div class="links">
+                <a class="link" href="https://smms.app/" target="_blank">SM.MS ★</a>
+                <a class="link" href="https://p.sda1.dev/" target="_blank">流浪图床</a>
+                <a class="link" href="https://snag.gy/" target="_blank">Snaggy</a>
+                <a class="link" href="https://waifu2x.udp.jp/index.zh-CN.html" target="_blank">waifu2x</a>
+                <a class="link" href="https://bigjpg.com/" target="_blank">Bigjpg</a>
+                <a class="link" href="https://cleanup.pictures/" target="_blank">Cleanup.pictures</a>
+                <a class="link" href="https://icons8.com/" target="_blank">Free Icons</a>
+                <a class="link" href="http://join-screenshots.zhanghai.me/" target="_blank">截图拼接工具</a>
+                <a class="link" href="https://wlm3201.github.io/Masonry_Image_Viewer/" target="_blank">瀑布流图片浏览</a>
+            </div>
+            <h2>建站/部署</h2>
+            <div class="links">
+                <a class="link" href="https://vercel.com/" target="_blank">Vercel</a>
+                <a class="link" href="https://app.netlify.com/" target="_blank">Netlify</a>
+                <a class="link" href="https://dash.cloudflare.com/" target="_blank">cloudflare</a>
+                <a class="link" href="https://www.spaceship.com/zh/launchpad/" target="_blank">spaceship</a>
+                <a class="link" href="https://nic.eu.org/arf/en" target="_blank">EU.org</a>
+            </div>
+            <h2>未分类</h2>
+            <div class="links">
+                <a class="link" href="https://docs.rsshub.app/zh/" target="_blank">RSSHub</a>
+                <a class="link" href="https://getquicker.net/Share/Actions" target="_blank">Quicker动作库</a>
+                <a class="link" href="https://zapier.com/app/dashboard" target="_blank">Zapier</a>
+                <a class="link" href="http://hitokoto.cn/" target="_blank">一言</a>
+                <a class="link" href="https://www.xiwnn.com/piano/" target="_blank">在线钢琴模拟器</a>
+                <a class="link" href="https://lab.magiconch.com/one-last-image/" target="_blank">One Last Image</a>
+                <a class="link" href="https://yopmail.com/zh/" target="_blank">YOPmail</a>
+                <a class="link" href="https://cobalt.tools/" target="_blank">cobalt下载视频</a>
+                <a class="link" href="https://cotrans.touhou.ai//" target="_blank">Cotrans Manga Image Translator</a>
+                <a class="link" href="https://moeka.me/mangaEditor/" target="_blank">MangaEditor</a>
+                <a class="link" href="https://web.archive.org/save/" target="_blank">Wayback Machine</a>
+                <a class="link" href="https://www.zhongguose.com/" target="_blank">传统颜色</a>
+                <a class="link" href="http://nipponcolors.com/" target="_blank">日本の伝統色</a>
+                <a class="link" href="https://www.runningcheese.com/bookmarklets" target="_blank">Bookmarklet书签</a>
+                <a class="link" href="https://notes-sticky.vercel.app/" target="_blank">Sticky notes</a>
+                <a class="link" href="http://jenevoldsen.com/literature-clock/" target="_blank">Literature Clock</a>
+                <a class="link" href="https://time.is/" target="_blank">Time.is</a>
+                <a class="link" href="https://trends.google.com/trends/?geo=US" target="_blank">Google 趋势</a>
+                <a class="link" href="https://tophub.today/" target="_blank">今日热榜官网</a>
+                <a class="link" href="https://www.xiachufang.com/page/market/2311/" target="_blank">菜单一键生成</a>
+                <a class="link" href="https://my.zerotier.com/network" target="_blank">ZeroTier Central</a>
+            </div>
+        </div>
+
+        <div id="tab-3" class="category">
+            <h2>Anime综合</h2>
+            <div class="links">
+                <a class="link" href="https://nyaa.si/" target="_blank">Nyaa</a>
+                <a class="link" href="http://www.tsdm39.com" target="_blank">天使动漫论坛</a>
+                <a class="link" href="https://share.dmhy.org/" target="_blank">動漫花園</a>
+                <a class="link" href="https://mikanani.me/" target="_blank">Mikan Project</a>
+                <a class="link" href="https://mikanime.tv" target="_blank">Mikan Project （国内）</a>
+                <a class="link" href="https://www.youtube.com/results?search_query" target="_blank">油管搜索</a>
+                <a class="link" href="https://search.bilibili.com/all" target="_blank">哔哩哔哩搜索</a>
+            </div>
+            <h2>动画</h2>
+            <div class="links">
+                <a class="link" href="http://mxdm.tv/" target="_blank">MX动漫</a>
+                <a class="link" href="https://www.nicovideo.jp/" target="_blank">ニコニコ</a>
+                <a class="link" href="https://omofun.in/" target="_blank">omofun</a>
+                <a class="link" href="https://dick.xfani.com/" target="_blank">稀饭动漫</a>
+                <a class="link" href="http://feijisu21.com/" target="_blank">飞极速在线</a>
+                <a class="link" href="https://www.btnull.org/" target="_blank">BTNull</a>
+            </div>
+            <h2>字幕</h2>
+            <div class="links">
+                <a class="link" href="https://bbs.acgrip.com/" target="_blank">Anime字幕论坛</a>
+                <a class="link" href="https://kitsunekko.net/dirlist.php?dir=subtitles%2Fjapanese%2F" target="_blank">Japanese subtitles</a>
+                <a class="link" href="https://assrt.net/" target="_blank">射手网(伪)</a>
+                <a class="link" href="https://zimuku.org/" target="_blank">字幕库</a>
+                <a class="link" href="https://subhd.tv/" target="_blank">SubHD</a>
+            </div>
+            <h2>漫画</h2>
+            <div class="links">
+                <a class="link" href="https://kox.moe/" target="_blank">Kox.moe</a>
+                <a class="link" href="https://dlraw.to/raw/" target="_blank">DLRaw</a>
+                <a class="link" href="http://www.a-zmanga.net/" target="_blank">A-z manga</a>
+                <a class="link" href="https://mangareader.tv/" target="_blank">Mangareader</a>
+                <a class="link" href="https://bookwalker.jp/top/" target="_blank">BOOK☆WALKER</a>
+                <a class="link" href="https://mangadex.org/" target="_blank">MangaDex</a>
+                <a class="link" href="https://www.mangabz.com" target="_blank">mangabz</a>
+                <a class="link" href="https://comic.idmzj.com/" target="_blank">动漫之家漫画网</a>
+                <a class="link" href="https://www.manhuagui.com/" target="_blank">漫画柜</a>
+                <a class="link" href="https://www.gufengmh.com/" target="_blank">古风漫画网</a>
+                <a class="link" href="http://www.lililicious.net/" target="_blank">Lililicious</a>
+            </div>
+            <h2>图片 同人 画集 等其它</h2>
+            <div class="links">
+                <a class="link" href="https://www.pixiv.net/" target="_blank">pixiv</a>
+                <a class="link" href="https://yandex.com/images/" target="_blank">Yandex.Images</a>
+                <a class="link" href="https://www.deviantart.com/" target="_blank">DeviantArt</a>
+                <a class="link" href="https://www.zerochan.net/" target="_blank">Zerochan HQ</a>
+                <a class="link" href="https://setteidreams.net/settei/" target="_blank">Settei Dreams</a>
+                <a class="link" href="https://www.sakugabooru.com" target="_blank">sakugabooru</a>
+                <a class="link" href="https://exhentai.org/" target="_blank">exhentai.org</a>
+                <a class="link" href="https://www.dlsite.com/index.html" target="_blank">DLsite</a>
+                <a class="link" href="https://booth.pm/zh-cn" target="_blank">BOOTH</a>
+                <a class="link" href="https://saucenao.com/" target="_blank">SauceNAO</a>
+                <a class="link" href="https://soutubot.moe/" target="_blank">搜图bot</a>
+                <a class="link" href="https://archiveofourown.org/" target="_blank">Archive of Our Own</a>
+            </div>
+            <h2>游戏</h2>
+            <div class="links">
+                <a class="link" href="https://store.steampowered.com/" target="_blank">Steam</a>
+                <a class="link" href="https://www.gog.com/" target="_blank">GOG</a>
+                <a class="link" href="https://store.epicgames.com" target="_blank">epic</a>
+                <a class="link" href="https://steamdb.info/" target="_blank">steamdb.info</a>
+                <a class="link" href="https://www.nintendo.com/" target="_blank">Nintendo Official</a>
+                <a class="link" href="https://store.nintendo.com.hk/games/all-released-games" target="_blank">Nintendo Store</a>
+                <a class="link" href="https://www.oldmantvg.net/" target="_blank">老男人游戏网</a>
+                <a class="link" href="https://i3ds.fun/" target="_blank">爱3DS</a>
+                <a class="link" href="http://www.nesbbs.com/bbs/" target="_blank">Nesbbs</a>
+                <a class="link" href="https://www.gamer520.com/" target="_blank">switch520</a>
+                <a class="link" href="https://sway.office.com/ZyHdQKVF0lCLyEuA" target="_blank">Switch520</a>
+                <a class="link" href="https://www.xn--switch-8q7iu0k1wkono.cn/" target="_blank">太原Switch专修</a>
+                <a class="link" href="https://shipengliang.com/download/switch/" target="_blank">Switch | 时鹏亮</a>
+            </div>
+            <h2>在线游戏</h2>
+            <div class="links">
+                <a class="link" href="https://zaixianwan.app/" target="_blank">老游戏在线玩</a>
+                <a class="link" href="https://flash.zczc.cz/" target="_blank">Flash 保存计划</a>
+                <a class="link" href="https://bubububaoshe.github.io/" target="_blank">千秋戏</a>
+                <a class="link" href="http://edgeofmap.com/qqx/index.html" target="_blank">千秋戏 - 开发版</a>
+                <a class="link" href="http://www.sketchswap.com/" target="_blank">Sketch Swap</a>
+                <a class="link" href="http://namerena.github.io/" target="_blank">名字竞技场</a>
+            </div>
+            <h2>音乐</h2>
+            <div class="links">
+                <a class="link" href="https://music.163.com/" target="_blank">网易云音乐</a>
+                <a class="link" href="https://jpopsuki.eu/index.php" target="_blank">JPopsuki</a>
+                <a class="link" href="http://www.tsdm39.com" target="_blank">天使动漫论坛</a>
+                <a class="link" href="https://nyaa.si/" target="_blank">Nyaa</a>
+                <a class="link" href="https://vgmdb.net/" target="_blank">VGMdb</a>
+                <a class="link" href="https://i.oppsu.cn/" target="_blank">iSearch 4.5</a>
+                <a class="link" href="https://jpop.xyz/" target="_blank">J-pop Music Download</a>
+                <a class="link" href="https://hikarinoakari.com/" target="_blank">Hikarinoakariost</a>
+                <a class="link" href="http://www.acgjc.com/" target="_blank">ACG漫音社</a>
+                <a class="link" href="https://minimummusic.com/" target="_blank">MinimumMusic</a>
+                <a class="link" href="https://www.sittingonclouds.net/" target="_blank">Sitting on Clouds</a>
+                <a class="link" href="https://downloads.khinsider.com/" target="_blank">Video Game Music Downloads</a>
+            </div>
+            <h2>乐谱</h2>
+            <div class="links">
+                <a class="link" href="https://musescore.com/" target="_blank">Musescore</a>
+                <a class="link" href="https://github.com/LibreScore/dl-librescore" target="_blank">GitHub - dl-librescore</a>
+                <a class="link" href="https://sheet.host/" target="_blank">Sheethost</a>
+                <a class="link" href="https://ichigos.com/sheets" target="_blank">Ichigo's Sheet Music</a>
+                <a class="link" href="http://josh.agarrado.net/music/anime/index.php" target="_blank">josh's anime sheet</a>
+                <a class="link" href="https://www.theishter.com/sheet-music.html" target="_blank">Sheet Music - Theishter</a>
+                <a class="link" href="https://cn.imslp.org/wiki/Main_Page" target="_blank">IMSLP</a>
+                <a class="link" href="https://www.midishow.com/" target="_blank">MidiShow</a>
+                <a class="link" href="https://canta-per-me.net/sheet-music/unofficial/" target="_blank">canta-per-me  » Sheet Music</a>
+                <a class="link" href="https://www.gangqinpu.com/" target="_blank">虫虫钢琴</a>
+                <a class="link" href="http://www.tan8.com/" target="_blank">弹琴吧</a>
+                <a class="link" href="http://www.qupu123.com/Search" target="_blank">中国曲谱网</a>
+            </div>
+            <h2>买买买</h2>
+            <div class="links">
+                <a class="link" href="https://www.suruga-ya.jp/feature/campaign/index.html" target="_blank">駿河屋</a>
+                <a class="link" href="https://www.suruga-ya.jp/feature/campaign/index.html" target="_blank">現在開催中</a>
+                <a class="link" href="https://jp.mercari.com/" target="_blank">メルカリ</a>
+                <a class="link" href="https://www.amazon.co.jp/" target="_blank">日亚</a>
+                <a class="link" href="https://www.amazon.com/ref=nav_logo" target="_blank">美亚</a>
+                <a class="link" href="https://auctions.yahoo.co.jp/" target="_blank">ヤフオク</a>
+                <a class="link" href="https://www.paypal.com/" target="_blank">PayPal</a>
+                <a class="link" href="https://www.hpoi.net/" target="_blank">hpoi手办维基</a>
+            </div>
+        </div>
+
+        <div id="tab-4" class="category">
+            <h2>PM</h2>
+            <div class="links">
+                    <a class="link" href="http://wiki.52poke.com/wiki/主页" target="_blank">神奇宝贝百科 ★</a>                
+                    <a class="link" href="http://bulbapedia.bulbagarden.net/wiki/Main_Page" target="_blank">Bulbapedia</a>                
+                    <a class="link" href="https://sv.xzonn.top/wiki/宝可梦一览" target="_blank">朱／紫 数据库</a>                
+                    <a class="link" href="http://www.pokemon.name/wiki/首页" target="_blank">口袋百科</a>                
+                    <a class="link" href="https://www.serebii.net/index2.shtml" target="_blank">Serebii.net</a>                
+                    <a class="link" href="https://wiki.xn--rckteqa2e.com/wiki/メインページ" target="_blank">ポケモンWiki</a>
+                    <a class="link" href="http://play.pokemonshowdown.com/" target="_blank">showdown ★</a>                
+                    <a class="link" href="http://china.psim.us/" target="_blank">showdown 国服</a>                
+                    <a class="link" href="https://www.meerkatnow.com/meerkat/389162/393204" target="_blank">猫鼬社群 ★</a>                
+                    <a class="link" href="https://aiteambuilder.com/sv_single_s1.html" target="_blank">AI Team Builder</a>                
+                    <a class="link" href="http://pokemon.alexonsager.net/47/93" target="_blank">Pokemon Fusion</a>                
+                    <a class="link" href="https://www.pokedex.org/" target="_blank">Pokedex.org</a>                
+                    <a class="link" href="https://sv-news.pokemon.co.jp/sc/list" target="_blank">宝可梦活动公告</a>
+                    <a class="link" href="https://www.pokecommunity.com/" target="_blank">The PokéCommunity Forums</a>                
+                    <a class="link" href="https://www.pmcenter.cn/" target="_blank">口袋中心</a>                
+                    <a class="link" href="https://stray-soul.com/" target="_blank">一只火狐的杂物间</a>                
+                    <a class="link" href="https://gamefreak.co.jp/blog/dir/index.html" target="_blank">増田部長のめざめるパワー</a>    
+            </div>
+            <h2>科A</h2>
+            <div class="links">
+                <a class="link" href="https://steins-gate.fandom.com/wiki/Steins;Gate_Wiki" target="_blank">Steins;Gate Wiki</a>
+                <a class="link" href="https://nrw.nobody.jp" target="_blank">未在調査拠点 N.R.W.</a>
+                <a class="link" href="https://sci-adv.cc/wiki/首页" target="_blank">科学ADV中文wiki</a>
+                <a class="link" href="https://zh.moegirl.org.cn/命运石之门系列" target="_blank">萌娘百科</a>
+                <a class="link" href="https://drive.sci-adv.cc/zh-CN/" target="_blank">未来技术实验室·科A共享服务器</a>
+                <a class="link" href="https://tieba.baidu.com/p/4621337179" target="_blank">新LAB资料库 漫画&小说分库</a>
+                <a class="link" href="https://sonome.dareno.me/" target="_blank">Committee of Zero</a>
+                <a class="link" href="https://lit.link/en/rocni" target="_blank">ろくに lit.link</a>
+                <a class="link" href="https://www.reddit.com/r/steinsgate/" target="_blank">reddit SG</a>
+            </div>
+            <h2>几原</h2>
+            <div class="links">
+                <a class="link" href="https://virtualstar.home.blog/" target="_blank">虚构星体观测室 ★</a>
+                <a class="link" href="http://kasira.blog97.fc2.com/category4-0.html" target="_blank">薔薇物語 テキスト ★</a>
+                <a class="link" href="http://ohtori.nu/" target="_blank">Empty Movement ★</a>
+                <a class="link" href="https://ikuni.net/" target="_blank">IKUNI</a>
+                <a class="link" href="https://ikuni.net/archives/" target="_blank">イクニのメルとも蔵Blog</a>
+                <a class="link" href="http://ohtori.nu/resources/" target="_blank">Resources</a>
+                <a class="link" href="http://ohtori.nu/gallery/" target="_blank">Gallery</a>
+                <a class="link" href="https://plus.fm-p.jp/u/kobeya_2019" target="_blank">霊廟 [フォレストページ＋]</a>
+                <a class="link" href="http://ohtori.nu/doujinshi/" target="_blank">Doujinshi</a>
+                <a class="link" href="https://ameblo.jp/studio-canopus/" target="_blank">スタジオ カノープスsatellite</a>
+                <a class="link" href="http://www.harukamichiru.com/forum.php" target="_blank">天与海の世界</a>
+                <a class="link" href="https://emptymovement.com/" target="_blank">Something Eternal</a>
+                <a class="link" href="http://www.ne.jp/asahi/krk/kct/misc/utena_song_tv.htm" target="_blank">少女革命ウテナ 決闘の歌 注釈</a>
+            </div>
+            <h2>杂</h2>
+            <div class="links">
+                <a class="link" href="http://yuc.wiki/" target="_blank">YuC's AnimeList</a>
+                <a class="link" href="http://www.typemoon.org/bbb/diary/" target="_blank">竹箒日記</a>
+                <a class="link" href="http://www.st.rim.or.jp/~nmisaki/topics/typemoon.html" target="_blank">TYPE-MOON不完全年表</a>
+                <a class="link" href="http://fjorg.lofter.com/post/1f46f9a3_1252bef2" target="_blank">乐园之扉</a>
+                <a class="link" href="https://www.cnblogs.com/stronghorse/" target="_blank">strnghrs - 博客园</a>
+                <a class="link" href="https://fictionjunction.com/" target="_blank">FictionJunction</a>
+                <a class="link" href="https://canta-per-me.net/" target="_blank">canta-per-me</a>
+                <a class="link" href="http://www.horizon-wiki.com/" target="_blank">白之預言書 - Sound Horizon中文百科</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const buttons = document.querySelectorAll('.tab-button');
+        const tabs = document.querySelectorAll('.category');
+
+        buttons.forEach(button => {
+            button.addEventListener('click', () => {
+                // 切换按钮状态
+                buttons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+
+                // 切换分类内容
+                tabs.forEach(tab => tab.classList.remove('active'));
+                document.getElementById(button.dataset.tab).classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>
