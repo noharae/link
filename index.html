@@ -1,59 +1,212 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="robots" content="noindex, nofollow">
-  <link rel="icon" href="icon1.png" type="image/png">
-  <title>My Links</title>
-  <style>
-    body {
-      font-family: 'Arial', sans-serif;
-      background-color: #fff;
-      color: #333;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      flex-direction: column;
-      text-align: center;
-    }
-    h1 {
-      font-size: 3em;
-      color: #222;
-      margin-bottom: 50px;
-    }
-    .links {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-    .links a {
-      font-size: 1.5em;
-      margin: 10px 0;
-      text-decoration: none;
-      color: #333;
-      padding: 15px 20px;  /* Adjust padding for consistent button size */
-      width: 250px;        /* Set a fixed width */
-      text-align: center;  /* Ensure text is centered inside the button */
-      border: 2px solid #333;
-      border-radius: 5px;
-      transition: all 0.3s ease;
-    }
-    .links a:hover {
-      background-color: #333;
-      color: #fff;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>目录（仮）</title>
+    <link rel="icon" href="resources/icon2.png" type="image/png">
+    <link rel="stylesheet" href="resources/css/element-plus.css">
+    <link rel="stylesheet" href="resources/css/style.css">
+    <script src="resources/js/vue.js"></script>
+    <script src="resources/js/element-plus.js"></script>
+    <script src="resources/js/element-plus-icon.js"></script>
 </head>
 <body>
-  <h1>My Links</h1>
-  <div class="links">
-    <a href="https://noharae.eu.org" target="_blank">Blog</a>
-    <a href="nav.html">Nav</a>
-    <a href="https://memo.571046.xyz/" target="_blank">Memo</a>
-  </div>
+<!--    <header class="main-header">-->
+<!--        <div class="header-content">-->
+<!--        </div>-->
+<!--    </header>-->
+    <div id="app">
+        <div class="container">
+            <div class="search-bar-container">
+                <div class="search-bar">
+                    <div class="engine-select-wrapper">
+                        <el-popover ref="enginePopover" class="engine-popover" placement="left" trigger="click"
+                                    :offset="25" :width="170" :hide-after="0">
+                            <template #reference>
+                                <div class="engine-select" slot="reference">
+                                    <svg class="engine-icon">
+                                        <use :href="`./resources/icons.svg#${currentEngine.name}`"
+                                             :xlink:href="`./resources/icons.svg#${currentEngine.name}`"/>
+                                    </svg>
+                                </div>
+                            </template>
+                            <div class="engine-grid">
+                                <div class="engine-item"
+                                     v-for="engine in searchEngines.filter(e => e.name !== currentEngine.name)"
+                                     :key="engine.name" @click="() => {
+                                          changeSearchEngine(engine.name);
+                                          $refs.enginePopover.hide();
+                                        }">
+                                    <svg class="engine-icon">
+                                        <use :href="`./resources/icons.svg#${engine.name}`"
+                                             :xlink:href="`./resources/icons.svg#${engine.name}`"/>
+                                    </svg>
+                                </div>
+                            </div>
+                        </el-popover>
+                    </div>
+
+                    <el-input v-model="searchQuery" size="large" class="search-input"
+                              :placeholder="hiToKoToText" @keyup.enter="search">
+                    </el-input>
+
+                    <div class="search-button" @click="search">
+                        <el-icon>
+                            <search/>
+                        </el-icon>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bookmarks-section">
+                <template v-for="(groupCards, groupKey) in bookMarkGroups" :key="groupKey">
+                    <h2 class="bookmark-title">{{ getChineseGroupName(bookMarkGroupNames, groupKey) }}</h2>
+                    <div class="bookmarks-container">
+                        <div v-for="(bookmark, bookmarkIndex) in groupCards" :key="bookmark.id"
+                             @mouseenter="setCardHoverState(bookMarkHoverStates, groupKey, bookmarkIndex, true)"
+                             @mouseleave="setCardHoverState(bookMarkHoverStates, groupKey, bookmarkIndex, true)"
+                             @animationend="setCardHoverState(bookMarkHoverStates, groupKey, bookmarkIndex, false)">
+                            <el-card class="bookmark-card" shadow="hover" @click="openLink(bookmark.url)" :title="bookmark.label"
+                                     :class="{ 'bookmark-card-flip-in': bookMarkHoverStates[groupKey][bookmarkIndex]}">
+                                <div class="bookmark-content">
+                                    <svg class="bookmark-icon">
+                                        <use :href="`./resources/icons.svg#${bookmark.name}`"
+                                             :xlink:href="`./resources/icons.svg#${bookmark.name}`"/>
+                                    </svg>
+                                    <div class="bookmark-info">
+                                        <h5>{{ bookmark.label }}</h5>
+                                    </div>
+                                </div>
+                            </el-card>
+                        </div>
+                    </div>
+                </template>
+            </div>
+
+        </div>
+
+        <div id="backgroundOverlayLeftContainer" :class="{ active: isLeftContainerActive }">
+            <div id="leftOverlay" class="background-overlay" :class="{ active: isLeftActive }"></div>
+        </div>
+
+        <div id="backgroundOverlayRightContainer" :class="{ active: isRightContainerActive }">
+            <div id="rightOverlay" class="background-overlay" :class="{ active: isRightActive }"></div>
+        </div>
+
+
+        <!-- 左侧触发区域 -->
+        <div class="trigger-area left-trigger" @click="handleClickLeftDrawer"
+             @mouseenter="handleEdgeHoverEnter('left')" @mouseleave="handleEdgeHoverLeave"></div>
+
+        <!-- 右侧触发区域 -->
+        <div class="trigger-area right-trigger" @click="handleClickRightDrawer"
+             @mouseenter="handleEdgeHoverEnter('right')" @mouseout="handleEdgeHoverLeave"></div>
+
+
+        <!-- 左侧抽屉 -->
+        <el-drawer v-model="leftDrawerVisible" title="工具" direction="ltr" size="50%" @close="handleDrawerClose">
+            <div class="drawer-content">
+                <template v-for="(leftGroupCards, leftGroupKey) in leftBookMarkGroups" :key="leftGroupKey">
+                    <h3 class="drawer-bookmark-title">{{ getChineseGroupName(leftBookMarkGroupNames, leftGroupKey) }}</h3>
+                    <el-row class="drawer-row">
+                        <el-col :xs="12" :sm="8" :md="8" :lg="6" :xl="4"
+                                v-for="(bookmark, bookmarkIndex) in leftGroupCards" :key="leftGroupKey" >
+                            <el-card class="drawer-bookmark-card" :style="{'--highlight-color': cardMarkColor}"
+                                     :class="{ 'bookmark-card-flip-in': leftBookMarkHoverStates[leftGroupKey][bookmarkIndex]}"
+                                     :shadow="bookmark.mark ? 'always' : 'hover'" :title="bookmark.label"
+                                     @click="openLink(bookmark.url)"
+                                     @mouseenter="setCardHoverState(leftBookMarkHoverStates, leftGroupKey, bookmarkIndex, true)"
+                                     @mouseleave="setCardHoverState(leftBookMarkHoverStates, leftGroupKey, bookmarkIndex, true)"
+                                     @animationend="setCardHoverState(leftBookMarkHoverStates, leftGroupKey, bookmarkIndex, false)">
+                                <div class="drawer-bookmark-content">
+                                    <div class="bookmark-info">
+                                        <h5>{{ bookmark.label }}</h5>
+                                    </div>
+                                </div>
+                            </el-card>
+                        </el-col>
+                    </el-row>
+                </template>
+            </div>
+        </el-drawer>
+
+        <!-- 右侧抽屉 -->
+        <el-drawer v-model="rightDrawerVisible" title="娱乐" direction="rtl" size="50%" @close="handleDrawerClose">
+            <div class="drawer-content">
+                <template v-for="(rightGroupCards, rightGroupKey) in rightBookMarkGroups" :key="rightGroupKey">
+                    <h3 class="drawer-bookmark-title">{{ getChineseGroupName(rightBookMarkGroupNames, rightGroupKey) }}</h3>
+                    <el-row class="drawer-row">
+                        <el-col :xs="12" :sm="8" :md="8" :lg="6" :xl="4"
+                                v-for="(bookmark, bookmarkIndex) in rightGroupCards" :key="rightGroupKey" >
+                            <el-card class="drawer-bookmark-card" :style="{'--highlight-color': cardMarkColor}"
+                                     :class="{ 'bookmark-card-flip-in': rightBookMarkHoverStates[rightGroupKey][bookmarkIndex]}"
+                                     :shadow="bookmark.mark ? 'always' : 'hover'" :title="bookmark.label"
+                                     @click="openLink(bookmark.url)"
+                                     @mouseenter="setCardHoverState(rightBookMarkHoverStates, rightGroupKey, bookmarkIndex, true)"
+                                     @mouseleave="setCardHoverState(rightBookMarkHoverStates, rightGroupKey, bookmarkIndex, true)"
+                                     @animationend="setCardHoverState(rightBookMarkHoverStates, rightGroupKey, bookmarkIndex, false)">
+                                <div class="drawer-bookmark-content">
+                                    <div class="bookmark-info">
+                                        <h5>{{ bookmark.label }}</h5>
+                                    </div>
+                                </div>
+                            </el-card>
+                        </el-col>
+                    </el-row>
+                </template>
+            </div>
+        </el-drawer>
+
+        <footer class="main-footer">
+            <div class="footer-content">
+                <span class="footer-year">© 2024 – {{ currentYear }}</span>
+                <svg class="footer-icon">
+                    <use href="./resources/icons.svg#Footer" xlink:href="./resources/icons.svg#Footer"/>
+                </svg>
+                <span>望月木</span>
+                <el-divider direction="vertical" ></el-divider>
+                <el-icon class="settings-btn" @click="showSettings = true"><Setting /></el-icon>
+            </div>
+        </footer>
+
+        <el-dialog v-model="showSettings" title="设置" width="30%">
+            <el-form label-width="120px">
+                <el-form-item label="默认搜索引擎">
+                    <el-select v-model="currentEngineName">
+                        <el-option v-for="engine in searchEngines" :key="engine.name"
+                                   :label="engine.label" :value="engine.name"></el-option>
+                    </el-select>
+                </el-form-item>
+                <el-form-item label="辉光生成开关">
+                    <el-switch v-model="isSteinsGateOpen" :style="{'--el-switch-on-color': cardMarkColor}"/>
+                </el-form-item>
+                <el-form-item label="辉光生成速率">
+                    <el-slider v-model="steinsGateSpeed" :min="50" :max="300" :step="10"
+                               :style="{'--el-slider-main-bg-color': cardMarkColor}"
+                               :format-tooltip="(number) => {return number + ' ms'}"/>
+                </el-form-item>
+                <el-form-item label="辉光保留时间">
+                    <el-slider v-model="steinsGateKeepTime" :min="1000" :max="5000" :step="100"
+                               :style="{'--el-slider-main-bg-color': cardMarkColor}"
+                               :format-tooltip="(number) => {return number/1000 + ' s'}"/>
+                </el-form-item>
+                <el-form-item label="辉光移动距离">
+                    <el-slider v-model="steinsGateMoveDistance" :min="100" :max="500" :step="10"
+                               :style="{'--el-slider-main-bg-color': cardMarkColor}"
+                               :format-tooltip="(number) => {return number + ' px'}"/>
+                </el-form-item>
+                <el-form-item label="卡片标记颜色">
+                    <el-color-picker v-model="cardMarkColor" show-alpha :predefine="predefineColors" />
+                </el-form-item>
+            </el-form>
+            <template #footer>
+                <el-button plain @click="showSettings = false">取消</el-button>
+                <el-button plain :color="cardMarkColor" @click="saveSettings">保存</el-button>
+            </template>
+        </el-dialog>
+
+    </div>
+    <script src="resources/js/app.js"></script>
 </body>
-</html>
+</html> 

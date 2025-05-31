@@ -1,0 +1,766 @@
+html {
+    overflow: auto; /* 隐藏滚动条 */
+    scrollbar-width: none; /* 针对火狐浏览器 */
+}
+
+html::-webkit-scrollbar {
+    display: none; /* 针对 Webkit 内核浏览器（如 Chrome、Safari 等） */
+}
+
+body {
+    font-family: Inter, 'Helvetica Neue', Helvetica, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', '微软雅黑', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    width: 100% !important;
+    min-height: 100vh;
+    background: #F3F5F6;
+}
+
+.container::-webkit-scrollbar {
+    display: none;
+}
+
+.container {
+    max-width: 60%;
+    margin: 0 auto;
+    padding: 5rem 2rem;
+    -ms-overflow-style: none; /* IE和Edge */
+    scrollbar-width: none; /* Firefox */
+}
+
+/*.main-header {*/
+/*    position: fixed;*/
+/*    top: 0;*/
+/*    left: 0;*/
+/*    right: 0;*/
+/*    height: 60px;*/
+/*    background-color: rgba(241, 243, 245, 0.2);*/
+/*    backdrop-filter: blur(3px);*/
+/*    -webkit-backdrop-filter: blur(3px);*/
+/*    z-index: 100;*/
+/*}*/
+
+#app {
+    margin-top: 60px;
+}
+
+.search-bar-container {
+    padding: 10% 5% 5%;
+    background-color: rgba(241, 243, 245, 0.2);
+    position: sticky;
+    top: -3%;
+    z-index: 200;
+    backdrop-filter: blur(3px);
+    margin: 0 auto;
+    transition: all 0.3s ease;
+}
+
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    background-color: #FFFFFF;
+    border-radius: 30px;
+    overflow: hidden;
+    box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
+    padding: 5px;
+}
+
+.engine-select-wrapper {
+    width: auto;
+    padding: 0 12px;
+}
+
+.engine-select {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    outline: none;
+    border-radius: 6px;
+    transition: all 0.2s;
+}
+
+.engine-select:hover {
+    background-color: rgba(245, 245, 245, 0.7);
+}
+
+.engine-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    border-radius: 20px;
+}
+
+.engine-popover {
+    border-radius: 30px;
+}
+
+.engine-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    padding: 8px;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: all 0.2s;
+}
+
+.engine-item:hover {
+    background-color: rgba(245, 245, 245, 0.7);
+    transform: scale(1.1);
+}
+
+.engine-select .engine-icon {
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+}
+
+.engine-icon {
+    cursor: pointer;
+    width: 24px;
+    height: 24px;
+}
+
+.search-input {
+    flex-grow: 1;
+    font-size: large;
+}
+
+.search-input .el-input__wrapper {
+    background-color: transparent !important;
+    box-shadow: none !important;
+    padding-left: 0;
+}
+
+.search-button {
+    padding: 8px 16px;
+    cursor: pointer;
+    color: #409EFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    transition: all 0.2s;
+}
+
+.search-button:hover {
+    color: #66b1ff;
+    transform: scale(1.1);
+}
+
+.bookmark-title {
+    color: #303133;
+    font-weight: 400;
+    padding-left: 2%;
+}
+
+.bookmarks-container {
+    padding: 0 0 5% 6%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.bookmark-card {
+    cursor: pointer;
+    width: 9rem !important;
+    min-width: 9rem !important;
+    max-width: 9rem !important;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+    margin: 0 0.5rem 1rem;
+    align-items: center;
+    /*margin: 0 10px 20px;*/
+    transform-style: preserve-3d;
+    position: relative;
+    animation-fill-mode: forwards;
+}
+
+.bookmark-card .el-card__body {
+    padding: 10px 15px;
+}
+
+@keyframes flipIn {
+    0% {
+        transform: rotateX(0);
+    }
+    25% {
+        transform: rotateX(180deg);
+    }
+    50% {
+        transform: rotateX(270deg);
+    }
+    75% {
+        transform: rotateX(315deg);
+    }
+    100% {
+        transform: rotateX(360deg);
+    }
+}
+
+.bookmark-card-flip-in {
+    animation: flipIn 0.3s ease-in-out forwards;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.bookmark-content {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.bookmark-icon {
+    width: 32px;
+    height: 32px;
+    min-width: 32px;
+    min-height: 32px;
+}
+
+.bookmark-info {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bookmark-info h5 {
+    margin: 0;
+    font-size: 14px;
+    color: #303133;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.bookmark-info p {
+    margin: 0;
+    font-size: 12px;
+    color: #909399;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+/*抽屉相关*/
+.trigger-area {
+    position: fixed;
+    top: 0;
+    height: 100vh;
+    width: 10vw;
+    z-index: 300;
+}
+
+.left-trigger {
+    left: 0;
+}
+
+.right-trigger {
+    right: 0;
+}
+
+@font-face {
+    font-family: 'BONX';
+    src: url('../BONX-Medium.woff2') format('woff2');
+}
+
+@keyframes steins-gate-number-float {
+    0% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateX(calc(var(--move-distance) * 1px));
+    }
+}
+
+/* 辉光动画 */
+@keyframes steins-gate-number-glow {
+    0%, 100% {
+        filter: brightness(1) drop-shadow(0 0 8px rgba(255, 170, 41, 0.5));
+    }
+    50% {
+        filter: brightness(1.2) drop-shadow(0 0 12px rgba(255, 170, 41));
+    }
+}
+
+.steins-gate-number {
+    position: fixed;
+    font-family: 'BONX', sans-serif;
+    /*color: #dd8c2f;*/
+    color: #e96636;
+    /*color: #d23918;*/
+    opacity: 0;
+    pointer-events: none;
+    /* 添加多层阴影实现辉光效果*/
+    text-shadow: 0 0 5px rgba(210, 57, 24),
+    0 0 10px rgba(233, 102, 54, 0.7),
+    0 0 15px rgba(233, 102, 54, 0.4),
+    0 0 20px rgba(233, 102, 54, 0.2);
+    /* 添加辉光动画 */
+    animation: steins-gate-number-float 3s ease-out forwards,
+    steins-gate-number-glow 3s ease-in-out infinite;
+    z-index: 800;
+    /*硬件加速，效果轻轻轻微*/
+    will-change: transform, opacity;
+}
+
+@keyframes halo {
+    0%, 100% {
+        opacity: 0.2;
+        transform: scale(0.95);
+    }
+    50% {
+        opacity: 0.6;
+        transform: scale(1.05);
+    }
+}
+
+/* 添加辉光管特有的微光效果 */
+.steins-gate-number::after {
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: radial-gradient(ellipse, rgba(210, 57, 24, 0.7) 0%, transparent 70%);
+    z-index: 700;
+    animation: halo 3s ease-in-out infinite;
+}
+
+/*预埋背景*/
+.background-overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 80%;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
+    z-index: 600;
+    animation-fill-mode: forwards;
+}
+
+/* 刷过动画 */
+@keyframes swipe-left {
+    from {clip-path: inset(0 100% 0 0);}
+    to {clip-path: inset(0 0 0 0);}
+}
+@keyframes swipe-right {
+    from {clip-path: inset(0 0 0 100%);}
+    to {clip-path: inset(0 0 0 0);}
+}
+#leftOverlay {
+    left: 0;
+    background: linear-gradient(90deg,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(0, 0, 0, 0.6) 40%,
+    rgba(0, 0, 0, 0.2) 80%,
+    rgba(243, 245, 246, 0.3) 100%);
+}
+#rightOverlay {
+    right: 0;
+    background: linear-gradient(270deg,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(0, 0, 0, 0.6) 40%,
+    rgba(0, 0, 0, 0.2) 80%,
+    rgba(243, 245, 246, 0.3) 100%);
+}
+#leftOverlay.active {
+    opacity: 1;
+    animation: swipe-left 0.2s ease-out;
+}
+#rightOverlay.active {
+    opacity: 1;
+    animation: swipe-right 0.2s ease-out;
+}
+#backgroundOverlayLeftContainer, #backgroundOverlayRightContainer {
+    position: fixed;
+    overflow: hidden;
+    top: 0;
+    bottom: 0;
+    z-index: 400;
+    animation-fill-mode: forwards;
+    pointer-events: none;
+    width: 100%;
+}
+#backgroundOverlayLeftContainer {
+    left: 0;
+    transition: left 0.3s;
+}
+#backgroundOverlayRightContainer {
+    right: 0;
+    transition: right 0.3s;
+}
+
+.el-overlay {
+    z-index: 300 !important;
+}
+.el-drawer {
+    background-color: #F3F5F6;;
+}
+.drawer-content {
+    padding: 0 13px;
+}
+.drawer-bookmark-title {
+    font-weight: 400;
+    margin-top: 5px;
+    margin-bottom: 13px;
+    color: #606266;
+}
+
+/* 抽屉卡片样式 */
+.drawer-bookmark-card {
+    cursor: pointer;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+    margin: 0 0 8px 0;
+    align-items: center;
+    transform-style: preserve-3d;
+    position: relative;
+    animation-fill-mode: forwards;
+    width: 9rem;
+    min-width: 9rem;
+    max-width: 9rem;
+    height: auto;
+    transform-origin: center;
+}
+
+.drawer-bookmark-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+}
+
+.el-card.is-always-shadow {
+    box-shadow: 0 0 8px var(--highlight-color) !important;
+}
+
+.drawer-bookmark-card .el-card__body {
+    padding: 0;
+}
+
+.drawer-bookmark-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 100%;
+    padding: 10px;
+}
+
+/* 处理文字换行 */
+.drawer-bookmark-content h5 {
+    white-space: normal;
+    /*word-break: break-word;*/
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    margin: 0;
+    line-height: 1.4;
+    font-size: 13px;
+}
+
+.drawer-row {
+    margin-bottom: 26px !important;
+}
+.drawer-row .el-col {
+    display: flex !important;
+    justify-content: center !important;
+}
+
+/* footer样式 */
+.main-footer {
+    text-align: center;
+    padding: 1.5rem 0;
+    color: #999;
+    font-size: 0.875em;
+    position: relative;
+    z-index: 100;
+}
+
+.footer-content {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.footer-content span {
+    line-height: 14px;
+    font-size: 14px;
+    vertical-align: bottom;
+}
+
+.footer-year {
+    bottom: -1px;
+    position: relative;
+}
+
+.footer-icon {
+    width: 20px;
+    height: 20px;
+}
+
+.settings-btn {
+    cursor: pointer;
+    transition: opacity 0.3s;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.settings-btn:hover {
+    color: #303133;
+}
+
+
+/*这里放的全是响应式变化的玩意*/
+@media screen and (min-width: 0px) {
+    .container {
+        max-width: 100%;
+        padding: 0 2rem;
+    }
+
+    .search-bar-container {
+        padding: 20% 4% 10%;
+    }
+
+    .search-bar {
+        padding: 2px;
+    }
+
+    .bookmark-title {
+        text-align: center;
+        padding: 0;
+    }
+
+    .bookmarks-container {
+        display: flex;
+        justify-content: center;
+        padding: 0 0 5%;
+        align-items: center;
+        align-content: center;
+    }
+
+    .bookmark-card {
+        margin: 0 0 1% 0;
+    }
+
+    #backgroundOverlayLeftContainer.active {
+        display: none;
+    }
+    #backgroundOverlayRightContainer.active {
+        display: none;
+    }
+
+    .el-drawer {
+        width: 90% !important;
+    }
+
+    .drawer-bookmark-card {
+        width: 4rem;
+        min-width: 4rem;
+        max-width: 4rem;
+    }
+
+}
+
+@media screen and (min-width: 280px) {
+    .drawer-bookmark-card {
+        width: 7rem;
+        min-width: 7rem;
+        max-width: 7rem;
+    }
+}
+
+@media screen and (min-width: 400px) {
+    .search-bar-container {
+        max-width: 360px !important;
+        padding: 15% 4% 10%;
+        margin-bottom: 13%;
+    }
+
+    .bookmarks-container {
+        max-width: 304px !important;
+        column-gap: 2%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .bookmark-title {
+        max-width: 304px !important;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .bookmark-card {
+        margin: 0 0 4% 0;
+    }
+
+    #backgroundOverlayLeftContainer.active {
+        left: 80%;
+        display: block;
+    }
+    #backgroundOverlayRightContainer.active {
+        right: 80%;
+        display: block;
+    }
+    .el-drawer {
+        width: 80% !important;
+    }
+
+    .drawer-bookmark-card {
+        width: 8rem;
+        min-width: 8rem;
+        max-width: 8rem;
+    }
+}
+
+@media screen and (min-width: 475px) {
+    #backgroundOverlayLeftContainer.active {
+        left: 70%;
+        display: block;
+    }
+    #backgroundOverlayRightContainer.active {
+        right: 70%;
+        display: block;
+    }
+    .el-drawer {
+        width: 70% !important;
+    }
+}
+
+@media screen and (min-width: 600px) {
+    .search-bar-container {
+        max-width: 430px !important;
+        padding: 12% 4% 6%;
+        margin-bottom: 4%;
+    }
+    .search-bar {
+        padding: 3px;
+    }
+    .bookmark-title {
+        max-width: 464px !important;
+        text-align: start;
+    }
+    .bookmarks-container {
+        max-width: 464px !important;
+        justify-content: flex-start;
+    }
+
+    #backgroundOverlayLeftContainer.active {
+        left: 60%;
+    }
+    #backgroundOverlayRightContainer.active {
+        right: 60%;
+    }
+    .el-drawer {
+        width: 60% !important;
+    }
+}
+
+@media screen and (min-width: 860px) {
+    .container {
+        max-width: 720px !important;
+        padding: 5rem 2rem;
+    }
+    .search-bar-container {
+        max-width: 720px !important;
+        padding: 8% 13% 6%;
+        margin: -4% auto 6%;
+    }
+    .search-bar {
+        padding: 4px;
+    }
+    .bookmark-title {
+        max-width: 800px !important;
+        padding: 0 7%;
+    }
+    .bookmarks-container {
+        max-width: 800px !important;
+        padding: 0 6% 5%;
+        margin: 0 auto 0 1%;
+    }
+
+    #backgroundOverlayLeftContainer.active {
+        left: 55%;
+    }
+    #backgroundOverlayRightContainer.active {
+        right: 55%;
+    }
+    .el-drawer {
+        width: 55% !important;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .container {
+        max-width: 960px !important;
+        padding: 5rem 2rem;
+    }
+
+    .search-bar-container {
+        max-width: 960px !important;
+        padding: 6% 13% 6%;
+        margin: -4% auto 6%;
+    }
+
+    .bookmarks-container {
+        max-width: 960px !important;
+        padding: 0 8% 5%;
+        margin: 0 auto 0 1%;
+    }
+
+    .bookmark-title {
+        max-width: 960px !important;
+        padding: 0 9%;
+    }
+
+    #backgroundOverlayLeftContainer.active {
+        left: 50%;
+    }
+    #backgroundOverlayRightContainer.active {
+        right: 50%;
+    }
+    .el-drawer {
+        width: 50% !important;
+    }
+}
+
+@media screen and (min-width: 1600px) {
+    .search-bar-container {
+        max-width: 1200px !important;
+        padding: 13% 13% 6%;
+        margin: -4% auto 6%;
+    }
+    .drawer-row {
+        grid-template-columns: repeat(5, 1fr);
+    }
+    .el-col-lg-6 {
+        max-width: 20%;
+        flex: 0 0 20%;
+    }
+
+}
+@media screen and (min-width: 2100px) {
+    .search-bar-container {
+        max-width: 1200px !important;
+        padding: 18% 13% 6%;
+        margin: -4% auto 6%;
+    }
+    .drawer-row {
+        grid-template-columns: repeat(6, 1fr);
+    }
+    .el-col-lg-6 {
+        max-width: 16%;
+        flex: 0 0 16%;
+    }
+}
