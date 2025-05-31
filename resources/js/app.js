@@ -12,7 +12,8 @@ const DEFAULT_STEINS_GATE_KEEP_TIME = 2800;
 // 默认设置值-辉光数字移动距离（px）
 const DEFAULT_STEINS_GATE_MOVE_DISTANCE = 250;
 // 默认设置值-卡片标记颜色
-const DEFAULT_CARD_MARK_COLOR = 'rgba(210, 57, 24)';
+const DEFAULT_CARD_MARK_COLOR = 'rgba(92, 124, 250, 0.8)';
+//原默认值'rgba(210, 57, 24)'
 
 const app = createApp({
     data() {
@@ -73,7 +74,7 @@ const app = createApp({
                     {id: 404, name: 'iLovePDF', label: 'iLovePDF', url: 'https://www.ilovepdf.com/'},
                     {id: 405, name: 'StirlingPDF', label: 'Stirling PDF', url: 'https://stirlingpdf.io/'},
                     {id: 406, name: 'DeepL', label: 'DeepL', url: 'https://www.deepl.com/'},
-                    {id: 407, name: 'ShenYanDaYi', label: '深言达意', url: 'https://www.shenyandayi.com/'},
+                    
                     {id: 408, name: 'TxtXrl', label: '易笺', url: 'https://txt.xrl.app/'},
                     {id: 416, name: 'MImageViewer', label: '瀑布流图片', url: 'https://wlm3201.github.io/Masonry_Image_Viewer/'},
                     {id: 409, name: 'BaiMiao', label: '白描', url: 'https://web.baimiaoapp.com/'},
@@ -81,6 +82,13 @@ const app = createApp({
                     {id: 411, name: 'FeiShu', label: '飞书妙记', url: 'https://www.feishu.cn/product/minutes'},
                     {id: 412, name: 'Cobalt', label: 'Cobalt下载', url: 'https://cobalt.tools/'},
                     {id: 413, name: 'Smms', label: 'SM.MS', url: 'https://smms.app/'},
+                    {id: 413, name: 'Onedrive', label: 'Onedrive', url: 'https://onedrive.live.com/'},
+                    {id: 413, name: 'ImagesTool', label: 'Images Tool', url: 'https://imagestool.com/'},
+                    {id: 413, name: 'Photopea', label: 'Photopea', url: 'https://www.photopea.com/'},
+                    {id: 501, name: 'Pixiv', label: 'Pixiv', url: 'https://www.pixiv.net/'},
+                    {id: 201, name: 'MX动漫', label: 'MX动漫', url: 'http://mxdm.xyz/'},
+                    {id: 1301, name: '神奇宝贝百科', label: '神奇宝贝百科', url: 'http://wiki.52poke.com/wiki/主页'},
+                    {id: 601, name: 'Steam', label: 'Steam', url: 'https://store.steampowered.com/'},
                 ]
             },
             bookMarkHoverStates: reactive({}),
@@ -153,7 +161,7 @@ const app = createApp({
                     {id: 507, mark: false, label: 'Weblio古语辞典', url: 'https://kobun.weblio.jp/'},
                 ],
                 textLinks: [
-                    {id: 701, mark: false, label: '深言达意', url: 'https://www.shenyandayi.com/'},
+                    {id: 701, mark: true, label: '深言达意', url: 'https://www.shenyandayi.com/'},
                     {id: 702, mark: false, label: '反向词典', url: 'https://wantwords.net/'},
                     {id: 703, mark: false, label: '据意查句', url: 'https://wantquotes.net/'},
                     {id: 704, mark: false, label: 'DeepL Write', url: 'https://www.deepl.com/zh/write'},
@@ -165,7 +173,7 @@ const app = createApp({
                     {id: 710, mark: false, label: 'Paste to Markdown', url: 'https://euangoddard.github.io/clipboard2markdown/'},
                     {id: 711, mark: false, label: 'Table Convert Online', url: 'https://tableconvert.com/'},
                     {id: 712, mark: false, label: 'MarkdownMate', url: 'https://kimmknight.github.io/MarkdownMate/'},
-                    {id: 713, mark: false, label: '白描网页版', url: 'https://web.baimiaoapp.com/'},
+                    {id: 713, mark: true, label: '白描网页版', url: 'https://web.baimiaoapp.com/'},
                     {id: 714, mark: false, label: 'regex101', url: 'https://regex101.com/'},
                     {id: 715, mark: false, label: 'Text Compare', url: 'https://diffsuite.com/'},
                     
@@ -181,7 +189,7 @@ const app = createApp({
                     {id: 808, mark: false, label: 'SaveTwitter', url: 'https://savetwitter.net/'},
                 ],
                 pictureLinks: [
-                    {id: 901, mark: true, label: '在线处理图片', url: 'https://imagestool.com/zh_CN/'},
+                    {id: 901, mark: true, label: 'Images Tool', url: 'https://imagestool.com/zh_CN/'},
                     {id: 902, mark: false, label: 'Photopea', url: 'https://www.photopea.com/'},
                     {id: 903, mark: false, label: '在线PS', url: 'https://ps.gaoding.com/#/?hmsr=zc-cc'},
                     {id: 904, mark: false, label: '图片改字PS', url: 'https://www.tugaigai.com/online_ps/'},
