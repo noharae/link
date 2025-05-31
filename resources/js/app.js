@@ -38,9 +38,8 @@ const app = createApp({
             //首页收藏组名（添加新组时直接在后面追加格式：自定义英文组名: '自定义组名', ）
             bookMarkGroupNames: {
                 commonlyUsedLinks: '常用链接',
-                aiLinks: '人工智障',
                 entertainmentLinks: '世俗娱乐',
-                otherLinks: '其他收藏',
+                otherLinks: '快速访问',
             },
             //首页收藏夹，添加新组时追加格式：
             //  上面那个自定义的英文组名: [ {xxx},{xxx},{xxx} ],
@@ -57,10 +56,6 @@ const app = createApp({
                     {id: 104, name: 'JustNote', label: 'JustNote', url: 'https://justnote.cc/'},
                     {id: 105, name: 'Follow', label: 'Follow', url: 'https://app.follow.is/feeds'},
                 ],
-                aiLinks: [
-                    {id: 201, name: 'ChatGPT', label: 'ChatGPT', url: 'https://chatgpt.com/'},
-                    {id: 202, name: 'DeepSeek', label: 'DeepSeek', url: 'https://chat.deepseek.com'},
-                ],
                 entertainmentLinks: [
                     {id: 301, name: 'bangumi', label: 'bangumi', url: 'https://bangumi.tv/'},
                     {id: 302, name: 'bilibili', label: 'bili稍后再看', url: 'https://www.bilibili.com/watchlater/#/list'},
@@ -71,6 +66,8 @@ const app = createApp({
                     {id: 307, name: 'WeiBo', label: '微博', url: 'https://weibo.com'}
                 ],
                 otherLinks: [
+                    {id: 401, name: 'ChatGPT', label: 'ChatGPT', url: 'https://chatgpt.com/'},
+                    {id: 402, name: 'DeepSeek', label: 'DeepSeek', url: 'https://chat.deepseek.com'},
                     {id: 401, name: '野原', label: '野原', url: 'https://noharae.eu.org/'},
                     {id: 402, name: 'MikuTools', label: 'MikuTools', url: 'https://tools.miku.ac/'},
                     {id: 404, name: 'iLovePDF', label: 'iLovePDF', url: 'https://www.ilovepdf.com/'},
