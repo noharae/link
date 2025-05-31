@@ -69,7 +69,7 @@ const app = createApp({
                 otherLinks: [
                     {id: 401, name: 'ChatGPT', label: 'ChatGPT', url: 'https://chatgpt.com/'},
                     {id: 402, name: 'DeepSeek', label: 'DeepSeek', url: 'https://chat.deepseek.com'},
-                    {id: 401, name: '野原', label: '野原', url: 'https://noharae.eu.org/'},
+                    {id: 401, name: 'noharae', label: '野原', url: 'https://noharae.eu.org/'},
                     {id: 402, name: 'MikuTools', label: 'MikuTools', url: 'https://tools.miku.ac/'},
                     {id: 404, name: 'iLovePDF', label: 'iLovePDF', url: 'https://www.ilovepdf.com/'},
                     {id: 405, name: 'StirlingPDF', label: 'Stirling PDF', url: 'https://stirlingpdf.io/'},
