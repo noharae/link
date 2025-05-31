@@ -509,6 +509,24 @@ body {
     height: 20px;
 }
 
+.footer-link {
+    text-decoration: none; /* 移除默认下划线 */
+    color: inherit; /* 继承父元素文字颜色 */
+    transition: color 0.3s; /* 添加颜色过渡效果 */
+    display: inline-flex;
+    align-items: center;
+    height: 100%; /* 继承父元素高度 */
+    line-height: 12px; /* 与span保持一致 */
+    font-size: 14px; /* 与span保持一致 */
+    position: relative;
+    top: -1px; /* 微调位置匹配其他元素 */
+}
+
+.footer-link:hover {
+    text-decoration: underline; /* 悬停时显示下划线 */
+    color: #409EFF; /* 悬停颜色（示例使用Element蓝色） */
+}
+
 .settings-btn {
     cursor: pointer;
     transition: opacity 0.3s;

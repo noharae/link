@@ -209,7 +209,7 @@ const app = createApp({
                     {id: 919, mark: false, label: 'Bg Eraser', url: 'https://www.bgeraser.com/'},
                     {id: 920, mark: false, label: 'Photo Editor', url: 'https://photokit.com/'},
                     {id: 921, mark: false, label: 'Segment Anything', url: 'https://segment-anything.com/demo#'},
-                    {id: 922, true: false, label: 'Free Icons', url: 'https://icons8.com/'},
+                    {id: 922, true: true, label: 'Free Icons', url: 'https://icons8.com/'},
                     {id: 923, mark: false, label: 'tablericons', url: 'https://tablericons.com/'},
                     {id: 924, mark: false, label: '阿里巴巴矢量图标库', url: 'https://www.iconfont.cn/'},
                     {id: 925, mark: false, label: 'PNG转SVG', url: 'https://www.samt.cloud/'},
