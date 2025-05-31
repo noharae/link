@@ -89,6 +89,7 @@ const app = createApp({
                     {id: 201, name: 'MX动漫', label: 'MX动漫', url: 'http://mxdm.xyz/'},
                     {id: 1301, name: '神奇宝贝百科', label: '神奇宝贝百科', url: 'http://wiki.52poke.com/wiki/主页'},
                     {id: 601, name: 'Steam', label: 'Steam', url: 'https://store.steampowered.com/'},
+                    {id: 202, name: 'OmoFun', label: 'OmoFun', url: 'https://omofun.in/'},
                 ]
             },
             bookMarkHoverStates: reactive({}),
@@ -308,7 +309,7 @@ const app = createApp({
                 ],
                 AnimaLinks: [
                     {id: 201, mark: true, label: 'MX动漫', url: 'http://mxdm.xyz/'},
-                    {id: 202, mark: false, label: 'omofun', url: 'https://omofun.in/'},
+                    {id: 202, mark: false, label: 'OmoFun', url: 'https://omofun.in/'},
                     {id: 203, mark: false, label: '稀饭动漫', url: 'https://dick.xfani.com/'},
                     {id: 204, mark: false, label: '飞极速在线', url: 'http://feijisu21.com/'},
                     {id: 205, mark: false, label: 'BTNull', url: 'https://www.gying.org/'},
