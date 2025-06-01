@@ -314,10 +314,11 @@ const app = createApp({
                 ],
                 subtitleLinks: [
                     {id: 301, mark: true, label: 'Anime字幕论坛', url: 'https://bbs.acgrip.com/'},
-                    {id: 302, mark: false, label: 'Japanese subtitles', url: 'https://kitsunekko.net/dirlist.php?dir=subtitles%2Fjapanese%2F'},
-                    {id: 303, mark: false, label: '射手网(伪)', url: 'https://assrt.net/'},
-                    {id: 304, mark: false, label: '字幕库', url: 'https://zimuku.org/'},
-                    {id: 305, mark: false, label: 'SubHD', url: 'https://subhd.tv/'},
+                    {id: 302, mark: true, label: 'kitsunekko', url: 'https://kitsunekko.net/dirlist.php?dir=subtitles%2Fjapanese%2F'},
+                    {id: 303, mark: false, label: 'kitsunekko mirror', url: 'https://github.com/Ajatt-Tools/kitsunekko-mirror'},
+                    {id: 304, mark: false, label: '射手网(伪)', url: 'https://assrt.net/'},
+                    {id: 305, mark: false, label: '字幕库', url: 'https://zimuku.org/'},
+                    {id: 306, mark: false, label: 'SubHD', url: 'https://subhd.tv/'},
                 ],
                 comicLinks: [
                     {id: 401, mark: true, label: 'Kox.moe', url: 'https://kox.moe/'},
