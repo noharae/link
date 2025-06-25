@@ -201,6 +201,7 @@ body {
 }
 
 .bookmark-card-flip-in {
+    /*transition: transform 0.15s ease-out;*/
     animation: flipIn 0.3s ease-in-out forwards;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
@@ -307,6 +308,8 @@ body {
     z-index: 800;
     /*硬件加速，效果轻轻轻微*/
     will-change: transform, opacity;
+    /*contain: strict;*/
+    /*transform: translateZ(0);*/
 }
 
 @keyframes halo {
@@ -402,10 +405,76 @@ body {
     z-index: 300 !important;
 }
 .el-drawer {
-    background-color: #F3F5F6;;
+    background-color: #F3F5F6;
 }
+
+/* 抽屉抽屉导航条样式 */
+.el-drawer__header {
+    padding: 0 !important;
+    border-bottom: none !important;
+    margin-bottom: 0;
+    display: block;
+}
+
+.drawer-nav-container {
+    padding: 0 20px;
+    border-bottom: 1px solid #E4E6E7;
+    position: relative;
+    align-items: center;
+    box-shadow: 0 4px 12px 0 rgba(0,0,0,0.1);
+    z-index: 100 !important;
+}
+
+.drawer-nav {
+    display: flex;
+    padding: 2% 5% 2% 0;
+    scroll-behavior: smooth;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+}
+.drawer-nav::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+}
+
+.nav-item {
+    padding: 8px 16px;
+    white-space: nowrap;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 14px;
+    color: #606266;
+    transition: all 0.3s ease;
+    position: relative;
+    flex-shrink: 0;
+    height: 14px;
+    line-height: 14px;
+    border-radius: 8px;
+}
+.nav-item:hover {
+    background-color: rgba(96, 98, 102, 0.1);
+}
+.nav-item.active {
+    font-weight: 600;
+    color: #fff;
+    background-color: var(--nav-mark-color, #606266);
+}
+.nav-item.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 20%;
+    right: 20%;
+    height: 3px;
+    border-radius: 2px;
+}
+
 .drawer-content {
     padding: 0 13px;
+}
+.group-item {
+    scroll-margin-top: 25px;
 }
 .drawer-bookmark-title {
     font-weight: 400;
@@ -429,11 +498,13 @@ body {
     max-width: 9rem;
     height: auto;
     transform-origin: center;
+    /* 启用 GPU 加速，一丢丢作用*/
+    transform: translateZ(0);
+    perspective: 1000px;
 }
 
 .drawer-bookmark-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
 }
 
 .el-card.is-always-shadow {
@@ -493,13 +564,10 @@ body {
     flex-wrap: wrap;
 }
 
-.footer-content span {
+.footer-year {
     line-height: 14px;
     font-size: 14px;
     vertical-align: bottom;
-}
-
-.footer-year {
     bottom: -1px;
     position: relative;
 }
@@ -524,7 +592,7 @@ body {
 
 .footer-link:hover {
     text-decoration: underline; /* 悬停时显示下划线 */
-    color: #409EFF; /* 悬停颜色（示例使用Element蓝色） */
+    color: #303133;
 }
 
 .settings-btn {
@@ -588,6 +656,9 @@ body {
         min-width: 4rem;
         max-width: 4rem;
     }
+    .setting-dialog {
+        --el-dialog-width: 90%;
+    }
 
 }
 
@@ -596,6 +667,9 @@ body {
         width: 7rem;
         min-width: 7rem;
         max-width: 7rem;
+    }
+    .setting-dialog {
+        --el-dialog-width: 90%;
     }
 }
 
@@ -634,11 +708,13 @@ body {
     .el-drawer {
         width: 80% !important;
     }
-
     .drawer-bookmark-card {
         width: 8rem;
         min-width: 8rem;
         max-width: 8rem;
+    }
+    .setting-dialog {
+        --el-dialog-width: 80%;
     }
 }
 
@@ -653,6 +729,9 @@ body {
     }
     .el-drawer {
         width: 70% !important;
+    }
+    .setting-dialog {
+        --el-dialog-width: 60%;
     }
 }
 
@@ -682,6 +761,9 @@ body {
     }
     .el-drawer {
         width: 60% !important;
+    }
+    .setting-dialog {
+        --el-dialog-width: 55%;
     }
 }
 
@@ -717,6 +799,9 @@ body {
     .el-drawer {
         width: 55% !important;
     }
+    .setting-dialog {
+        --el-dialog-width: 50%;
+    }
 }
 
 @media screen and (min-width: 1024px) {
@@ -751,6 +836,15 @@ body {
     .el-drawer {
         width: 50% !important;
     }
+    .setting-dialog {
+        --el-dialog-width: 40%;
+    }
+}
+
+@media screen and (min-width: 1300px) {
+    .setting-dialog {
+        --el-dialog-width: 30%;
+    }
 }
 
 @media screen and (min-width: 1600px) {
@@ -766,7 +860,9 @@ body {
         max-width: 20%;
         flex: 0 0 20%;
     }
-
+    .setting-dialog {
+        --el-dialog-width: 26%;
+    }
 }
 @media screen and (min-width: 2100px) {
     .search-bar-container {
@@ -780,5 +876,8 @@ body {
     .el-col-lg-6 {
         max-width: 16%;
         flex: 0 0 16%;
+    }
+    .setting-dialog {
+        --el-dialog-width: 24%;
     }
 }
