@@ -150,6 +150,8 @@ const app = createApp({
                     {mark: false, label: '豆包', url: 'https://www.doubao.com/chat/'},
                     {mark: false, label: '问小白', url: 'https://www.wenxiaobai.com/'},
                     {mark: false, label: '秘塔搜索', url: 'https://metaso.cn/'},
+                    {mark: false, label: 'TB AI', url: 'https://tbai.xin/'},
+                    {mark: false, label: 'Chatbox AI', url: 'https://chatboxai.app/zh'},
                 ]),
                 dictionaryLinks: Object.freeze([
                     {mark: true, label: 'Google翻译', url: 'https://translate.google.com.hk/?hl=zh-CN&tab=wT'},
