@@ -549,7 +549,8 @@ const app = createApp({
             leftGroupRefs: {},
             rightGroupActiveKey: null,
             rightGroupRefs: {},
-            isManualScrolling: false
+            isManualScrolling: false,
+            isPageVisible: true
         }
     },
     created() {
@@ -579,10 +580,12 @@ const app = createApp({
         }
     },
     mounted() {
+        document.addEventListener('visibilitychange', this.handleVisibilityChange);
         this.fetchHitokoto();
         this.loadSettings();
     },
     beforeUnmount() {
+        document.removeEventListener('visibilitychange', this.handleVisibilityChange);
         document.querySelectorAll('.steins-gate-number').forEach(el => {
             el.parentNode?.removeChild(el);
         });
@@ -676,6 +679,9 @@ const app = createApp({
             if (this.isLeftActive || this.isRightActive || this.leftDrawerVisible || this.rightDrawerVisible) {
                 const isLeft = this.isLeftActive || this.leftDrawerVisible;
                 this.steinsGateInterval = setInterval(() => {
+                    if (!this.isPageVisible) {
+                        return;
+                    }
                     this.createSteinsGateNumber(isLeft);
                 }, this.steinsGateSpeed);
             }
@@ -977,6 +983,9 @@ const app = createApp({
                 this.scrollThrottle = false;
             });
         },
+        handleVisibilityChange() {
+            this.isPageVisible = document.visibilityState === 'visible';
+        }
     }
 });
 
