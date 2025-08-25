@@ -305,8 +305,8 @@ const app = createApp({
                 ]),
                 AnimaLinks: Object.freeze([
                     {mark: true, label: 'MX动漫', url: 'http://mxdm.xyz/'},
-                    {mark: true, label: 'OmoFun', url: 'https://omofun.in/'},
-                    {mark: false, label: '稀饭动漫', url: 'https://dick.xfani.com/'},
+                    {mark: false, label: 'OmoFun', url: 'https://omofun.in/'},
+                    {mark: true, label: '稀饭动漫', url: 'https://dick.xfani.com/'},
                     {mark: false, label: 'girigiri愛動漫', url: 'https://anime.girigirilove.com/'},
                     {mark: false, label: '次元城动画', url: 'https://www.cycani.org/'},
                     {mark: false, label: 'Anime1.me', url: 'https://anime1.me/'},
