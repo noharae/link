@@ -148,6 +148,8 @@ const app = createApp({
                     {mark: false, label: '豆包', url: 'https://www.doubao.com/chat/'},
                     {mark: false, label: '秘塔搜索', url: 'https://metaso.cn/'},
                     {mark: false, label: 'TB AI', url: 'https://tbai.xin/'},
+                    {mark: false, label: 'ALL IN API', url: 'https://oneai.evanora.top/'},
+                    {mark: false, label: 'OpenRouter', url: 'https://openrouter.ai/'},
                     {mark: false, label: 'Chatbox AI', url: 'https://chatboxai.app/zh'},
                 ]),
                 dictionaryLinks: Object.freeze([
