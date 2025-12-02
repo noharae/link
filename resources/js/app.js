@@ -141,7 +141,7 @@ const app = createApp({
                     {mark: true, label: 'DeepSeek', url: 'https://chat.deepseek.com'},
                     {mark: true, label: 'Gemini', url: 'https://gemini.google.com/app'},
                     {mark: false, label: 'AI Studio', url: 'https://aistudio.google.com/app/prompts/new_chat'},
-                    {mark: false, label: 'Copilot', url: 'https://github.com/copilot'},
+                    {mark: false, label: 'NotebookLM', url: 'hhttps://notebooklm.google.com/'},
                     {mark: false, label: 'Poe', url: 'https://poe.com/GPT-4-Turbo'},
                     {mark: false, label: '必应图像创建器', url: 'https://cn.bing.com/images/create/'},
                     {mark: false, label: 'Kimi', url: 'https://kimi.moonshot.cn/'},
@@ -217,6 +217,7 @@ const app = createApp({
                     {mark: false, label: 'PNG转SVG', url: 'https://www.samt.cloud/'},
                     {mark: false, label: 'SVG在线压缩合并工具', url: 'https://www.zhangxinxu.com/sp/svgo/'},
                     {mark: false, label: '图片隐写加密', url: 'http://c.p2hp.com/yinxietu/'},
+                    {mark: false, label: '好拼-在线拼图', url: 'https://img.ops-coffee.com/photo/'},
                 ]),
                 bookLinks: Object.freeze([
                     {mark: true, label: 'Send To Kindle', url: 'https://www.amazon.com/sendtokindle'},
