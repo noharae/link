@@ -73,7 +73,7 @@ const app = createApp({
                     {name: 'OmoFun', label: 'OmoFun', url: 'https://omofun.in/'},
                 ]),
                 otherLinks: Object.freeze([
-                    {name: 'Gemini', label: 'Gemini', url: 'https://gemini.google.com/app'},
+                    {name: 'GEMINI', label: 'Gemini', url: 'https://gemini.google.com/app'},
                     {name: 'DeepSeek', label: 'DeepSeek', url: 'https://chat.deepseek.com'},
                     {name: 'MikuTools', label: 'MikuTools', url: 'https://tools.miku.ac/'},
                     {name: 'ImagesTool', label: 'Images Tool', url: 'https://imagestool.com/'},
