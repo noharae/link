@@ -65,7 +65,7 @@ const app = createApp({
                     {name: 'WeiBo', label: '微博', url: 'https://weibo.com'},
                     {name: 'Telegram', label: 'Telegram', url: 'https://web.telegram.org/a/'},
                     {name: 'Twitter', label: 'Twitter', url: 'https://twitter.com'},
-                    {name: 'BlueSky', label: 'BlueSky', url: 'https://bsky.app/'},
+                    {name: 'Mikan', label: 'Mikan Project', url: 'https://mikanani.me/'},
                     {name: 'Pixiv', label: 'Pixiv', url: 'https://www.pixiv.net/'},
                     {name: 'Steam', label: 'Steam', url: 'https://store.steampowered.com/'},
                     {name: '52poke', label: '神百', url: 'http://wiki.52poke.com/wiki/主页'},
@@ -343,6 +343,7 @@ const app = createApp({
                 ]),
                 fanArtLinks: Object.freeze([
                     {mark: true, label: 'Pixiv', url: 'https://www.pixiv.net/'},
+                    {mark: false, label: 'BlueSky', url: 'https://bsky.app/'},
                     {mark: false, label: 'Yandex.Images', url: 'https://yandex.com/images/'},
                     {mark: false, label: 'DeviantArt', url: 'https://www.deviantart.com/'},
                     {mark: false, label: 'Zerochan HQ', url: 'https://www.zerochan.net/'},
