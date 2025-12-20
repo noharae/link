@@ -119,6 +119,7 @@ const app = createApp({
                 ]),
                 cloudDiskLinks: Object.freeze([
                     {mark: true, label: 'Onedrive', url: 'https://onedrive.live.com/'},
+                    {mark: true, label: 'Google Drive', url: 'https://drive.google.com/'},
                     {mark: false, label: 'MEGA', url: 'https://mega.nz/'},
                     {mark: true, label: '坚果云', url: 'https://www.jianguoyun.com/'},
                     {mark: false, label: '百度网盘', url: 'http://pan.baidu.com/disk/home'},
@@ -138,11 +139,11 @@ const app = createApp({
                     {mark: false, label: '微信文件传输', url: 'https://szfilehelper.weixin.qq.com/'},
                 ]),
                 aiLinks: Object.freeze([
-                    {mark: true, label: 'ChatGPT', url: 'https://chatgpt.com/'},
+                    {mark: false, label: 'ChatGPT', url: 'https://chatgpt.com/'},
                     {mark: true, label: 'Gemini', url: 'https://gemini.google.com/app'},
                     {mark: false, label: 'AI Studio', url: 'https://aistudio.google.com/app/prompts/new_chat'},
-                    {mark: false, label: 'NotebookLM', url: 'https://notebooklm.google/'},
-                    {mark: false, label: 'DeepSeek', url: 'https://chat.deepseek.com'},
+                    {mark: true, label: 'NotebookLM', url: 'https://notebooklm.google/'},
+                    {mark: true, label: 'DeepSeek', url: 'https://chat.deepseek.com'},
                     {mark: false, label: 'Kimi', url: 'https://kimi.moonshot.cn/'},
                     {mark: false, label: '豆包', url: 'https://www.doubao.com/chat/'},
                     {mark: false, label: '秘塔搜索', url: 'https://metaso.cn/'},
@@ -238,6 +239,7 @@ const app = createApp({
                     {mark: false, label: 'ClawCloud', url: 'https://ap-southeast-1.run.claw.cloud/'},
                     {mark: false, label: 'Cloudflare', url: 'https://dash.cloudflare.com/'},
                     {mark: false, label: 'Spaceship', url: 'https://www.spaceship.com/zh/launchpad/'},
+                    {mark: false, label: 'API Test', url: 'https://reqbin.com/'},
                 ]),
                 otherLinks: Object.freeze([
                     {mark: true, label: 'RSSHub', url: 'https://docs.rsshub.app/zh/'},
