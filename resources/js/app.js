@@ -404,6 +404,8 @@ const app = createApp({
                     {mark: false, label: 'Sitting on Clouds', url: 'https://www.sittingonclouds.net/'},
                     {mark: true, label: 'Video Game Music Downloads', url: 'https://downloads.khinsider.com/'},
                     {mark: false, label: '音乐磁场', url: 'https://www.hifini.com/'},
+                    {mark: false, label: 'lucida 流媒下载', url: 'https://lucida.to/'},
+                    {mark: false, label: 'DoujinStyle', url: 'https://doujinstyle.com/'},
                 ]),
                 sheetMusicLinks: Object.freeze([
                     {mark: true, label: 'Musescore', url: 'https://musescore.com/'},
@@ -440,6 +442,7 @@ const app = createApp({
                     {mark: false, label: 'F-Droid', url: 'https://f-droid.org/zh_Hans/packages/'},
                     {mark: false, label: 'apkcombo', url: 'https://apkcombo.com/zh/'},
                     {mark: false, label: 'APKMirror', url: 'https://www.apkmirror.com/'},
+                    {mark: false, label: 'liteapks', url: 'https://liteapks.com/'},
                     {mark: false, label: 'crxsoso', url: 'https://www.crxsoso.com/search'},
                     {mark: false, label: 'strnghrs - 博客园', url: 'https://www.cnblogs.com/stronghorse/'},
                 ]),
