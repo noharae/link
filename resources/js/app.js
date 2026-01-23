@@ -403,8 +403,9 @@ const app = createApp({
                     {mark: false, label: 'J-pop Music Download', url: 'https://jpop.xyz/'},
                     {mark: false, label: 'Sitting on Clouds', url: 'https://www.sittingonclouds.net/'},
                     {mark: true, label: 'Video Game Music Downloads', url: 'https://downloads.khinsider.com/'},
+                    {mark: false, label: 'Tidal', url: 'https://tidal.com/'},
+                    {mark: true, label: 'lucida 流媒下载', url: 'https://lucida.to/'},
                     {mark: false, label: '音乐磁场', url: 'https://www.hifini.com/'},
-                    {mark: false, label: 'lucida 流媒下载', url: 'https://lucida.to/'},
                     {mark: false, label: 'DoujinStyle', url: 'https://doujinstyle.com/'},
                 ]),
                 sheetMusicLinks: Object.freeze([
