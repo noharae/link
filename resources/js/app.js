@@ -105,7 +105,7 @@ const app = createApp({
                 audioLinks: '音视频',
                 pictureLinks: '图片',
                 bookLinks: '书籍',
-                developLinks: '开发',
+                developLinks: '建站',
                 otherLinks: '其他'
             },
             // 左抽屉收藏夹，添加新组时追加格式：
@@ -243,6 +243,8 @@ const app = createApp({
                     {mark: false, label: 'Cloudflare Pages', url: 'https://pages.cloudflare.com/'},
                     {mark: false, label: 'Spaceship', url: 'https://www.spaceship.com/zh/launchpad/'},
                     {mark: false, label: 'API Test', url: 'https://reqbin.com/'},
+                    {mark: false, label: 'ColoCrossing', url: 'https://cloud.colocrossing.com/index.php'},
+                    {mark: false, label: 'umami', url: 'https://cloud.umami.is/'},
                 ]),
                 otherLinks: Object.freeze([
                     {mark: true, label: 'RSSHub', url: 'https://docs.rsshub.app/zh/'},
