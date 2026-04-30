@@ -55,7 +55,7 @@ const app = createApp({
                     {name: 'WorkFlowy', label: 'WorkFlowy', url: 'https://workflowy.com/'},
                     {name: 'Habitica', label: 'Habitica', url: 'https://habtica.com/'},
                     {name: 'Notion', label: 'Notion', url: 'https://www.notion.com/'},
-                    {name: 'Keep', label: 'Keep', url: 'https://keep.google.com/'},
+                    {name: 'ntfy', label: 'ntfy', url: 'https://push.571046.xyz/'},
                     {name: 'JustNote', label: 'JustNote', url: 'https://justnote.cc/'},
                     {name: 'Follow', label: 'Follow', url: 'https://app.follow.is/feeds'},
                     {name: 'GEMINI', label: 'Gemini', url: 'https://gemini.google.com/app'},
