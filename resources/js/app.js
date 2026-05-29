@@ -245,6 +245,7 @@ const app = createApp({
                     {mark: false, label: 'API Test', url: 'https://reqbin.com/'},
                     {mark: false, label: 'ColoCrossing', url: 'https://cloud.colocrossing.com/index.php'},
                     {mark: false, label: 'umami', url: 'https://cloud.umami.is/'},
+                    {mark: false, label: 'Judge0 IDE', url: 'https://ide.judge0.com/'},
                 ]),
                 otherLinks: Object.freeze([
                     {mark: true, label: 'RSSHub', url: 'https://docs.rsshub.app/zh/'},
