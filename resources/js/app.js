@@ -220,6 +220,7 @@ const app = createApp({
                     {mark: true, label: 'Free Icons', url: 'https://icons8.com/'},
                     {mark: false, label: 'tablericons', url: 'https://tablericons.com/'},
                     {mark: false, label: '阿里巴巴矢量图标库', url: 'https://www.iconfont.cn/'},
+                    {mark: false, label: 'svgl 图标库', url: 'https://svgl.app/'},
                     {mark: false, label: 'PNG转SVG', url: 'https://www.samt.cloud/'},
                     {mark: false, label: 'SVG在线压缩合并工具', url: 'https://www.zhangxinxu.com/sp/svgo/'},
                 ]),
