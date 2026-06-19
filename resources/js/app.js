@@ -60,7 +60,7 @@ const app = createApp({
                     {name: 'Follow', label: 'Follow', url: 'https://app.follow.is/feeds'},
                     {name: 'GEMINI', label: 'Gemini', url: 'https://gemini.google.com/app'},
                     {name: 'Onedrive', label: 'Onedrive', url: 'https://onedrive.live.com/'},
-                    {name: 'Telegram', label: 'Telegram', url: 'https://web.telegram.org/a/'},
+                    {name: 'Text', label: 'Text Toolkit', url: 'https://text.571046.xyz/'},
                 ]),
                 entertainmentLinks: Object.freeze([
                     {name: 'bangumi', label: 'bangumi', url: 'https://bangumi.tv/'},
