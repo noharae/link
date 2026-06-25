@@ -379,6 +379,8 @@ const app = createApp({
                     {mark: false, label: 'steamdb.info', url: 'https://steamdb.info/'},
                     {mark: false, label: 'Nintendo Official', url: 'https://www.nintendo.com/'},
                     {mark: false, label: 'Nintendo Store', url: 'https://store.nintendo.com.hk/games/all-released-games'},
+                    {mark: false, label: 'Humble Bundle', url: 'https://www.humblebundle.com/'},
+                    {mark: false, label: '杉果', url: 'https://www.sonkwo.hk/'},
                     {mark: true, label: '老男人游戏网', url: 'https://www.oldmantvg.net/'},
                     {mark: false, label: '爱3DS', url: 'https://i3ds.fun/'},
                     {mark: false, label: 'switch520', url: 'https://www.gamer520.com/'},
