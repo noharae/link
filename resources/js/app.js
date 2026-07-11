@@ -382,7 +382,7 @@ const app = createApp({
                     {mark: false, label: '杉果', url: 'https://www.sonkwo.hk/'},
                     {mark: false, label: 'SteamPY', url: 'https://steampy.com/'},
                     {mark: true, label: '老男人游戏网', url: 'https://www.oldmantvg.net/'},
-                    {mark: false, label: '爱3DS', url: 'https://i3ds.fun/'},
+                    {mark: false, label: '老机库', url: 'https://laojiku.com/#handheld'},
                     {mark: false, label: 'switch520', url: 'https://www.gamer520.com/'},
                     {mark: false, label: 'Switch520', url: 'https://sway.office.com/ZyHdQKVF0lCLyEuA'},
                     {mark: false, label: '太原Switch专修', url: 'https://www.xn--switch-8q7iu0k1wkono.cn/'},
@@ -392,12 +392,13 @@ const app = createApp({
                 ]),
                 onlineGameLinks: Object.freeze([
                     {mark: false, label: '老游戏在线玩', url: 'https://zaixianwan.app/'},
+                    {mark: false, label: '怀旧游戏博物馆', url: 'https://rgm.games/'},
                     {mark: false, label: 'Flash 保存计划', url: 'https://flash.zczc.cz/'},
+                    {mark: false, label: 'Poki 在线小游戏', url: 'https://poki.com/zh'},
                     {mark: false, label: '千秋戏', url: 'https://bubububaoshe.github.io/'},
                     {mark: false, label: '千秋戏 - 开发版', url: 'http://edgeofmap.com/qqx/index.html'},
                     {mark: false, label: 'Sketch Swap', url: 'http://www.sketchswap.com/'},
                     {mark: false, label: '名字竞技场', url: 'http://namerena.github.io/'},
-                    {mark: false, label: 'Poki在线游戏', url: 'https://poki.com/zh'},
                 ]),
                 wikiLinks: Object.freeze([
                     {mark: false, label: '空洞骑士 Wiki', url: 'https://hkss.huijiwiki.com/wiki/%E9%A6%96%E9%A1%B5'},
