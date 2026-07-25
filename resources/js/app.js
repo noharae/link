@@ -279,7 +279,7 @@ const app = createApp({
                     {mark: false, label: '思绪思维导图', url: 'https://wanglin2.github.io/mind-map/#/'},
                     {mark: false, label: 'Ankiweb', url: 'https://ankiweb.net/decks'},
                     {mark: false, label: 'Excalidraw', url: 'https://excalidraw.com/'},
-                    {mark: false, label: 'SkylineWebcams', url: 'https://www.skylinewebcams.com/'},
+                    {mark: true, label: '别录.', url: 'https://www.bielu.app/'},
                 ]),
             },
             leftBookMarkHoverStates: reactive({}),
