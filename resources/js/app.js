@@ -64,7 +64,7 @@ const app = createApp({
                 ]),
                 entertainmentLinks: Object.freeze([
                     {name: 'bangumi', label: 'bangumi', url: 'https://bangumi.tv/'},
-                    {name: 'bilibili', label: 'bili稍后再看', url: 'https://www.bilibili.com/watchlater/#/list'},
+                    {name: 'NeoDB', label: 'NeoDB', url: 'https://neodb.social/'},
                     {name: 'TieBa', label: '贴吧', url: 'https://tieba.baidu.com/'},
                     {name: 'WeiBo', label: '微博', url: 'https://weibo.com'},
                     {name: 'Twitter', label: 'Twitter', url: 'https://twitter.com'},
@@ -328,7 +328,7 @@ const app = createApp({
                     {mark: false, label: 'Anime1.me', url: 'https://anime1.me/'},
                     {mark: false, label: '飞极速在线', url: 'http://feijisu21.com/'},
                     {mark: false, label: 'AnimeGoClub', url: 'https://animegoclub.com/'},
-                    {mark: true, label: 'BTNull', url: 'https://www.gying.org/'},
+                    {mark: true, label: '观影', url: 'https://www.xn--ykq321c.com/'},
                     {mark: false, label: 'LIBVIO', url: 'https://libvio.link/'},
                     {mark: false, label: 'SeedHub', url: 'https://www.seedhub.cc/'},
                     {mark: false, label: '厂长资源', url: 'https://www.czzy.site/'},
@@ -347,7 +347,7 @@ const app = createApp({
                 ]),
                 comicLinks: Object.freeze([
                     {mark: true, label: 'Kox.moe', url: 'https://kox.moe/'},
-                    {mark: true, label: 'DLRaw', url: 'https://dlraw.to/raw/'},
+                    {mark: true, label: 'DLRaw', url: 'https://dl-raw.si/'},
                     {mark: false, label: 'A-z manga', url: 'http://www.a-zmanga.net/'},
                     {mark: false, label: 'Mangareader', url: 'https://mangareader.tv/'},
                     {mark: false, label: 'MangaDex', url: 'https://mangadex.org/'},
