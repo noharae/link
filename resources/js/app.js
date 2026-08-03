@@ -61,6 +61,7 @@ const app = createApp({
                     {name: 'GEMINI', label: 'Gemini', url: 'https://gemini.google.com/app'},
                     {name: 'Onedrive', label: 'Onedrive', url: 'https://onedrive.live.com/'},
                     {name: 'text-toolkit', label: 'Text Toolkit', url: 'https://text.571046.xyz/'},
+                    {name: 'timer-toolkit', label: 'Timer Toolkit', url: 'https://timer.571046.xyz/'},
                 ]),
                 entertainmentLinks: Object.freeze([
                     {name: 'bangumi', label: 'bangumi', url: 'https://bangumi.tv/'},
@@ -497,7 +498,7 @@ const app = createApp({
                     {mark: false, label: '未在調査拠点 N.R.W.', url: 'https://nrw.nobody.jp'},
                     {mark: false, label: '科学ADV中文wiki', url: 'https://sci-adv.cc/wiki/首页'},
                     {mark: false, label: '萌娘百科 SG', url: 'https://zh.moegirl.org.cn/命运石之门系列'},
-                    {mark: false, label: '未来技术实验室·科A共享服务器', url: 'https://drive.sci-adv.cc/zh-CN/'},
+                    {mark: false, label: '未来技术实验室·科A共享服务器', url: 'https://drive.sci-adv.org/'},
                     {mark: false, label: '新LAB资料库 漫画&小说分库', url: 'https://tieba.baidu.com/p/4621337179'},
                     {mark: false, label: 'Committee of Zero', url: 'https://sonome.dareno.me/'},
                     {mark: false, label: 'ろくに lit.link', url: 'https://lit.link/en/rocni'},
