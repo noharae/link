@@ -61,7 +61,7 @@ const app = createApp({
                     {name: 'GEMINI', label: 'Gemini', url: 'https://gemini.google.com/app'},
                     {name: 'Onedrive', label: 'Onedrive', url: 'https://onedrive.live.com/'},
                     {name: 'text-toolkit', label: 'Text Toolkit', url: 'https://text.571046.xyz/'},
-                    {name: 'timer-toolkit', label: 'TimerToolkit', url: 'https://timer.571046.xyz/'},
+                    {name: 'timer-toolkit', label: 'Timer', url: 'https://timer.571046.xyz/'},
                 ]),
                 entertainmentLinks: Object.freeze([
                     {name: 'bangumi', label: 'bangumi', url: 'https://bangumi.tv/'},
