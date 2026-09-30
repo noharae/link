@@ -196,7 +196,7 @@ const app = createApp({
                     {mark: false, label: 'SaveTwitter', url: 'https://savetwitter.net/'},
                 ]),
                 instrumentLinks: Object.freeze([
-                    {mark: false, label: '在线钢琴模拟器', url: 'https://www.xiwnn.com/piano/'},
+                    {mark: true, label: '在线钢琴模拟器', url: 'https://www.xiwnn.com/piano/'},
                     {mark: false, label: '计算器音乐', url: 'https://calculatormusic.com/zh'},
                     {mark: true, label: '在线节拍器', url: 'https://rtcd.io/zh-cn/metronome/'},
                     {mark: false, label: 'Jampea MIDI编辑', url: 'https://jampea.com/'},
