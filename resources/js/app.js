@@ -142,6 +142,7 @@ const app = createApp({
                     {mark: false, label: '文叔叔', url: 'https://www.wenshushu.cn/'},
                     {mark: false, label: '微信文件传输', url: 'https://szfilehelper.weixin.qq.com/'},
                     {mark: false, label: 'PairDrop 本地文件传输', url: 'https://pairdrop.net/'},
+                    {mark: false, label: '网络剪贴板', url: 'https://clipboard.im/'},
                 ]),
                 aiLinks: Object.freeze([
                     {mark: true, label: 'ChatGPT', url: 'https://chatgpt.com/'},
@@ -284,6 +285,7 @@ const app = createApp({
                     {mark: false, label: 'Ankiweb', url: 'https://ankiweb.net/decks'},
                     {mark: true, label: 'Excalidraw', url: 'https://excalidraw.com/'},
                     {mark: true, label: '别录.', url: 'https://www.bielu.app/'},
+                    {mark: true, label: 'Anyway.Fonts.', url: 'https://anyway.fm/fonts/'},
                 ]),
             },
             leftBookMarkHoverStates: reactive({}),
