@@ -278,7 +278,7 @@ const app = createApp({
                     {mark: false, label: 'Literature Clock', url: 'https://literature-clock.jenevoldsen.com/'},
                     {mark: false, label: 'Time.is', url: 'https://time.is/'},
                     {mark: false, label: 'Google 趋势', url: 'https://trends.google.com/trends/?geo=US'},
-                    {mark: true, label: '下厨房', url: 'https://www.xiachufang.com/'},
+                    {mark: false, label: '下厨房', url: 'https://www.xiachufang.com/'},
                     {mark: true, label: '食用手册', url: 'https://cook.yunyoujun.cn/'},
                     {mark: false, label: '菜单一键生成', url: 'https://www.xiachufang.com/page/market/2311/'},
                     {mark: false, label: '百度脑图', url: 'https://naotu.baidu.com/'},
