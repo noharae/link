@@ -288,6 +288,7 @@ const app = createApp({
                     {mark: true, label: 'Excalidraw', url: 'https://excalidraw.com/'},
                     {mark: true, label: '别录.', url: 'https://www.bielu.app/'},
                     {mark: true, label: 'Anyway.Fonts.', url: 'https://anyway.fm/fonts/'},
+                    {mark: false, label: '江山时序', url: 'https://deanchen.me/jiangshan-map/'},
                 ]),
             },
             leftBookMarkHoverStates: reactive({}),
